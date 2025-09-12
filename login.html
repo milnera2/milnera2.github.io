@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Maltio - Login</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #36e28c;
+            --secondary-color: #00bfff;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        @layer components {
+            .mobile-menu {
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
+            }
+
+            .mobile-menu.is-open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#111714] text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="relative sticky top-0 z-50 flex items-center justify-between border-b border-solid border-b-[#293830] bg-[#111714]/80 px-4 sm:px-6 lg:px-10 py-4 backdrop-blur-md">
+                <div class="flex items-center gap-3 text-white">
+                    <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"/>
+                    </svg>
+                    <h2 class="text-white text-2xl font-bold tracking-tight">Maltio</h2>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Home</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Learning</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">News</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulator</a>
+                    </nav>
+                    
+                    <button id="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden flex items-center justify-center text-white hover:text-[var(--secondary-color)] transition-colors">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <span class="sr-only">Open menu</span>
+                    </button>
+
+                    <button type="button" class="flex items-center justify-center rounded-full size-12 bg-[#293830] hover:bg-[var(--secondary-color)] text-white transition-colors">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+
+                <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-x-0 top-[64px] bg-[#1a221d] border-b border-solid border-b-[#293830] py-4 z-40">
+                    <nav class="flex flex-col items-center gap-4">
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Home</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Learning</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">News</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Simulator</a>
+                    </nav>
+                </div>
+            </header>
+
+            <main class="flex-1 flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-md w-full space-y-8 p-8 bg-[#1a221d] rounded-xl shadow-lg">
+                    <div>
+                        <svg class="mx-auto h-12 w-auto text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"/>
+                        </svg>
+                        <h2 class="mt-6 text-center text-3xl font-extrabold text-white">
+                            Log in to your account
+                        </h2>
+                        <p class="mt-2 text-center text-sm text-white/60">
+                            Or <a href="#" class="font-medium text-[var(--primary-color)] hover:text-emerald-400">create a new account</a>
+                        </p>
+                    </div>
+                    <form class="mt-8 space-y-6" action="#" method="POST">
+                        <input type="hidden" name="remember" value="true">
+                        <div class="rounded-md shadow-sm -space-y-px">
+                            <div>
+                                <label for="email-address" class="sr-only">Email address</label>
+                                <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-t-md relative block w-full px-3 py-3 border border-[#293830] placeholder-white/40 text-white bg-transparent focus:outline-none focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] focus:z-10 text-sm" placeholder="Email address">
+                            </div>
+                            <div>
+                                <label for="password" class="sr-only">Password</label>
+                                <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-b-md relative block w-full px-3 py-3 border border-[#293830] placeholder-white/40 text-white bg-transparent focus:outline-none focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] focus:z-10 text-sm" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-[var(--primary-color)] focus:ring-[var(--primary-color)] border-gray-300 rounded">
+                                <label for="remember-me" class="ml-2 block text-sm text-white/60">
+                                    Remember me
+                                </label>
+                            </div>
+
+                            <div class="text-sm">
+                                <a href="#" class="font-medium text-[var(--secondary-color)] hover:text-sky-400">
+                                    Forgot your password?
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-[#111714] bg-[var(--primary-color)] hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-all duration-300">
+                                <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                                    <svg class="h-5 w-5 text-[#111714]/60 group-hover:text-[#111714]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                Log in
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+
+            <footer class="border-t border-solid border-t-[#293830]">
+                <div class="max-w-7xl mx-auto px-5 py-10 text-center">
+                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Terms of Service</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Privacy Policy</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Contact Us</a>
+                    </div>
+                    <p class="text-white/40 text-sm">© 2025 Maltio. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (!hamburgerButton || !mobileMenu) return;
+
+            const setAria = (open) => {
+                hamburgerButton.setAttribute('aria-expanded', String(open));
+            };
+
+            hamburgerButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = mobileMenu.classList.contains('is-open');
+                mobileMenu.classList.toggle('is-open');
+                setAria(!isOpen);
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('is-open')) {
+                        mobileMenu.classList.remove('is-open');
+                        setAria(false);
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!mobileMenu.contains(target) && !hamburgerButton.contains(target)) {
+                    mobileMenu.classList.remove('is-open');
+                    setAria(false);
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+                    mobileMenu.classList.remove('is-open');
+                    setAria(false);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
