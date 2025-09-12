@@ -1,0 +1,161 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Maltio - Stock Option Learning</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #13a4ec;
+        --secondary-color: #0d6e9e;
+        --accent-green: #2ecc71;
+      }
+      .hover-lift {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+</head>
+<body class="bg-[#111618] text-gray-200" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#283339] bg-[#111618]/80 px-10 py-4 backdrop-blur-sm">
+<div class="flex items-center gap-3 text-white">
+<div class="h-8 w-8 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+</div>
+<h1 class="text-xl font-bold tracking-tighter">Maltio</h1>
+</div>
+<nav class="hidden items-center gap-6 md:flex">
+<a class="text-sm font-medium text-gray-300 transition-colors hover:text-[var(--primary-color)]" href="#">Home</a>
+<a class="text-sm font-medium text-[var(--primary-color)]" href="#">Learn</a>
+<a class="text-sm font-medium text-gray-300 transition-colors hover:text-[var(--primary-color)]" href="#">Community</a>
+<a class="text-sm font-medium text-gray-300 transition-colors hover:text-[var(--primary-color)]" href="#">Pricing</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-5 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-wide transition-colors hover:bg-[var(--secondary-color)]">
+<span class="truncate">Get started</span>
+</button>
+<div class="aspect-square size-10 rounded-full bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1BGzEDfC37fOPvNbO_5x3KLapSgByJwZIDsQu_1N2mdgMclfGfAQtUQwwz2s5WJYyzEEAa07zxJYgUbBTjFUh4-HYqS4n02Da-KKXePbyvsw8PlVQwRGbFYElJGvp9FCBE1u3tifyXhsNlMgN3G4r8PXbL2XKe5YLcFgihwYLbKpkxIV875csTDZUUg33ICQXjki-FsASvPuVO270XDzmJiim3eqdVRCS2VFTygKJlB4zYx2B-XtSc-mY91FAfT5_pro2Gnd7FoSn");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-4xl">
+<div class="mb-8 flex items-center gap-2 text-sm font-medium">
+<a class="text-gray-400 transition-colors hover:text-[var(--primary-color)]" href="#">Learn</a>
+<span class="text-gray-500">/</span>
+<span class="font-semibold text-white">Options Trading</span>
+</div>
+<div class="mb-8">
+<h2 class="text-4xl font-extrabold tracking-tighter text-white sm:text-5xl">Options Trading</h2>
+<p class="mt-4 text-lg text-gray-400">
+              Options trading involves buying or selling contracts that give the holder the right, but not the obligation, to buy or sell an underlying asset at a predetermined price within a specified time frame. It's a strategy used to speculate on price movements or hedge existing investments.
+            </p>
+</div>
+<div class="space-y-10">
+<div>
+<h3 class="mb-6 text-2xl font-bold tracking-tight text-white">Key Concepts</h3>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+<div class="flex items-start gap-4 rounded-lg bg-[#1a2125] p-5 hover-lift">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[var(--accent-green)] text-white"><span class="material-symbols-outlined">attach_money</span></div>
+<div>
+<p class="text-lg font-semibold text-white">Strike Price</p>
+<p class="mt-1 text-sm text-gray-400">The price at which the option holder can buy or sell the underlying asset.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-lg bg-[#1a2125] p-5 hover-lift">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[var(--accent-green)] text-white"><span class="material-symbols-outlined">calendar_month</span></div>
+<div>
+<p class="text-lg font-semibold text-white">Expiration Date</p>
+<p class="mt-1 text-sm text-gray-400">The date by which the option must be exercised or it expires.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-lg bg-[#1a2125] p-5 hover-lift">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[var(--accent-green)] text-white"><span class="material-symbols-outlined">trending_up</span></div>
+<div>
+<p class="text-lg font-semibold text-white">Call Option</p>
+<p class="mt-1 text-sm text-gray-400">The right to buy an asset at the strike price.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-lg bg-[#1a2125] p-5 hover-lift">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[var(--accent-green)] text-white"><span class="material-symbols-outlined">trending_down</span></div>
+<div>
+<p class="text-lg font-semibold text-white">Put Option</p>
+<p class="mt-1 text-sm text-gray-400">The right to sell an asset at the strike price.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="mb-6 text-2xl font-bold tracking-tight text-white">Strategies</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4 rounded-lg bg-[#1a2125] p-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-md bg-[#283339] text-[var(--primary-color)]"><span class="material-symbols-outlined">show_chart</span></div>
+<div class="flex-1">
+<p class="font-medium text-white">Long Call</p>
+<p class="text-sm text-gray-400">Buying a call option when expecting the asset price to rise.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-[#1a2125] p-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-md bg-[#283339] text-[var(--primary-color)]"><span class="material-symbols-outlined">show_chart</span></div>
+<div class="flex-1">
+<p class="font-medium text-white">Long Put</p>
+<p class="text-sm text-gray-400">Buying a put option when expecting the asset price to fall.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-[#1a2125] p-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-md bg-[#283339] text-[var(--primary-color)]"><span class="material-symbols-outlined">show_chart</span></div>
+<div class="flex-1">
+<p class="font-medium text-white">Short Call</p>
+<p class="text-sm text-gray-400">Selling a call option when expecting the asset price to stay below the strike price.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-[#1a2125] p-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-md bg-[#283339] text-[var(--primary-color)]"><span class="material-symbols-outlined">show_chart</span></div>
+<div class="flex-1">
+<p class="font-medium text-white">Short Put</p>
+<p class="text-sm text-gray-400">Selling a put option when expecting the asset price to stay above the strike price.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="mb-6 text-2xl font-bold tracking-tight text-white">Risks</h3>
+<div class="space-y-4">
+<div class="flex items-start gap-4 rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-4">
+<div class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-yellow-500 text-black"><span class="material-symbols-outlined text-base">warning</span></div>
+<p class="text-yellow-200">Options can expire worthless, leading to a total loss of the premium paid.</p>
+</div>
+<div class="flex items-start gap-4 rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-4">
+<div class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-yellow-500 text-black"><span class="material-symbols-outlined text-base">warning</span></div>
+<p class="text-yellow-200">Options trading can be complex and requires a good understanding of market dynamics.</p>
+</div>
+<div class="flex items-start gap-4 rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-4">
+<div class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-yellow-500 text-black"><span class="material-symbols-outlined text-base">warning</span></div>
+<p class="text-yellow-200">Short options strategies have unlimited risk if the asset price moves significantly.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-end">
+<button class="group flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-md h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide transition-all hover:bg-[var(--secondary-color)] hover:pl-4 hover:pr-8">
+<span class="truncate">Continue Learning</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

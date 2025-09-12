@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-500: #13a4ec;
+        --primary-600: #0b89c3;
+        --secondary-400: #9db0b9;
+        --secondary-500: #283339;
+        --secondary-600: #1c2327;
+        --secondary-700: #111618;
+      }
+    </style>
+</head>
+<body class="bg-[var(--secondary-700)]" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+<div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[var(--secondary-500)] px-10 py-4">
+<div class="flex items-center gap-4 text-white">
+<svg class="h-8 w-8 text-[var(--primary-500)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Maltio</h2>
+</div>
+<nav class="flex items-center gap-6 text-sm font-medium text-white">
+<a class="transition-colors hover:text-[var(--primary-500)]" href="#">Dashboard</a>
+<a class="transition-colors hover:text-[var(--primary-500)]" href="#">Learn</a>
+<a class="text-[var(--primary-500)]" href="#">Simulator</a>
+<a class="transition-colors hover:text-[var(--primary-500)]" href="#">Community</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[var(--secondary-500)] text-white transition-colors hover:bg-[var(--secondary-600)]">
+<span class="material-symbols-outlined"> notifications </span>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiWnzLogqJCEbN3YTXTplfz51b1oex0q5NhQ75jIlFHyIo7qsJ8fwc38mj5traTLMzo1kezigQ5d-8MkNYEfd0q_aavooJoduLtmP5ZGCEZmpeQWhfl5B1D9dhTiyg8Kn-DLJVSTM0EZO0ImKHC4vFvkF4fGHI9hJF1FIWi5bR2iiF3bZflimKsFn9dOZk87Uvgsbl305kmUsjYo_WldgoV_LOattBESrCbAh8Cqz1_l3NppBwpiMCwqUFdjZhP9eznJu-fkojQaia");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center p-10">
+<div class="flex w-full max-w-7xl flex-col gap-8">
+<div class="flex flex-col gap-2">
+<h1 class="text-[32px] font-bold leading-tight tracking-tight text-white">Simulator</h1>
+<p class="text-[var(--secondary-400)]">Practice trading options in a simulated environment. No real money involved.</p>
+</div>
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--secondary-400)]"> search </span>
+<input class="h-12 w-full rounded-md border border-[var(--secondary-500)] bg-[var(--secondary-600)] pl-10 pr-4 text-white placeholder:text-[var(--secondary-400)] focus:border-[var(--primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)]/50" placeholder="Search for a stock (e.g. AAPL, TSLA)" value=""/>
+</div>
+<div class="flex flex-col gap-4">
+<h2 class="text-xl font-bold leading-tight tracking-tight text-white">Portfolio</h2>
+<div class="overflow-hidden rounded-lg border border-[var(--secondary-500)] bg-[var(--secondary-600)]">
+<table class="w-full">
+<thead class="bg-[var(--secondary-500)]/50">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Symbol</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Quantity</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Avg. Cost</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Last Price</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Change</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Value</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[var(--secondary-500)]">
+<tr>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="text-sm font-semibold text-white">AAPL</div>
+<div class="text-xs text-[var(--secondary-400)]">Apple Inc.</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">100</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$150.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$160.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-green-500">+$10.00 (6.67%)</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-white">$16,000.00</td>
+</tr>
+<tr>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="text-sm font-semibold text-white">MSFT</div>
+<div class="text-xs text-[var(--secondary-400)]">Microsoft Corp.</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">50</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$250.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$260.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-green-500">+$10.00 (4.00%)</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-white">$13,000.00</td>
+</tr>
+<tr>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="text-sm font-semibold text-white">AMZN</div>
+<div class="text-xs text-[var(--secondary-400)]">Amazon.com, Inc.</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">20</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$3,000.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$3,100.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-green-500">+$100.00 (3.33%)</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-white">$62,000.00</td>
+</tr>
+<tr>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="text-sm font-semibold text-white">TSLA</div>
+<div class="text-xs text-[var(--secondary-400)]">Tesla, Inc.</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">30</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$700.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$750.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-green-500">+$50.00 (7.14%)</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-white">$22,500.00</td>
+</tr>
+<tr>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="text-sm font-semibold text-white">GOOG</div>
+<div class="text-xs text-[var(--secondary-400)]">Alphabet Inc.</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">10</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$2,500.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$2,600.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-green-500">+$100.00 (4.00%)</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-white">$26,000.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h2 class="text-xl font-bold leading-tight tracking-tight text-white">Recent Trades</h2>
+<div class="overflow-hidden rounded-lg border border-[var(--secondary-500)] bg-[var(--secondary-600)]">
+<table class="w-full">
+<thead class="bg-[var(--secondary-500)]/50">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Symbol</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Type</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Quantity</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Price</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--secondary-400)]">Date</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[var(--secondary-500)]">
+<tr>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-white">AAPL</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-blue-400">Buy</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">10</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$150.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">Aug 1, 2023</td>
+</tr>
+<tr>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-white">MSFT</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-red-500">Sell</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">5</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$260.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">Aug 2, 2023</td>
+</tr>
+<tr>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-white">AMZN</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-blue-400">Buy</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">2</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$3,100.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">Aug 3, 2023</td>
+</tr>
+<tr>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-white">TSLA</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-red-500">Sell</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">3</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$750.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">Aug 4, 2023</td>
+</tr>
+<tr>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-white">GOOG</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-blue-400">Buy</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">1</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">$2,600.00</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-[var(--secondary-400)]">Aug 5, 2023</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
