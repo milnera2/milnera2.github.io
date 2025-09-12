@@ -1,236 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-  <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-  <title>Maltio - Stock Option Learning</title>
-  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <style type="text/tailwindcss">
-    :root {
-      --primary-color: #36e28c;
-      --secondary-color: #00bfff;
-    }
-    .hover-lift {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hover-lift:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
-    }
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Maltio - Stock Option Learning</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #36e28c;
+            --secondary-color: #00bfff;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
 
-    @layer components {
-      .mobile-menu {
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
-      }
+        @layer components {
+            .mobile-menu {
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
+            }
 
-      .mobile-menu.is-open {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  </style>
+            .mobile-menu.is-open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    </style>
 </head>
 <body class="bg-[#111714]">
-  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
-    <div class="layout-container flex h-full grow flex-col">
-      <header class="relative sticky top-0 z-50 flex items-center justify-between border-b border-solid border-b-[#293830] bg-[#111714]/80 px-4 sm:px-6 lg:px-10 py-4 backdrop-blur-md">
-        <div class="flex items-center gap-3 text-white">
-          <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"/>
-          </svg>
-          <h2 class="text-white text-2xl font-bold tracking-tight">Maltio</h2>
-        </div>
-
-        <div class="flex items-center gap-4">
-          <nav class="hidden md:flex items-center gap-8">
-            <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Home</a>
-            <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Learning</a>
-            <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">News</a>
-            <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulator</a>
-          </nav>
-          
-          <button id="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden flex items-center justify-center text-white hover:text-[var(--secondary-color)] transition-colors">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-            <span class="sr-only">Open menu</span>
-          </button>
-
-          <button type="button" class="flex items-center justify-center rounded-full size-12 bg-[#293830] hover:bg-[var(--secondary-color)] text-white transition-colors">
-            <span class="material-symbols-outlined">person</span>
-          </button>
-        </div>
-
-        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-x-0 top-[64px] bg-[#1a221d] border-b border-solid border-b-[#293830] py-4 z-40">
-          <nav class="flex flex-col items-center gap-4">
-            <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Home</a>
-            <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Learning</a>
-            <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">News</a>
-            <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Simulator</a>
-          </nav>
-        </div>
-      </header>
-
-      <main class="flex-1">
-        <section class="text-center py-20 px-4 sm:px-6 lg:px-8">
-          <h1 class="text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter">
-            Unlock Your Stock Option <span class="text-[var(--primary-color)]">Potential</span>
-          </h1>
-          <p class="mt-4 max-w-2xl mx-auto text-lg text-white/70">Master the art of stock options with our interactive simulator and comprehensive courses.</p>
-          <div class="mt-10 flex flex-wrap justify-center gap-4">
-            <button class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-[var(--primary-color)] text-[#111714] text-base font-bold tracking-wide shadow-lg shadow-[var(--primary-color)]/20 hover:bg-emerald-400 transition-all duration-300 transform hover:scale-105">
-              <span>Start Learning</span>
-            </button>
-            <button class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-transparent border-2 border-[var(--secondary-color)] text-[var(--secondary-color)] text-base font-bold tracking-wide shadow-lg shadow-[var(--secondary-color)]/20 hover:bg-[var(--secondary-color)] hover:text-white transition-all duration-300 transform hover:scale-105">
-              <span>Try Simulator</span>
-            </button>
-          </div>
-        </section>
-
-        <section class="py-16 px-4 sm:px-6 lg:px-8">
-          <div class="max-w-5xl mx-auto">
-            <div class="w-full aspect-video rounded-xl shadow-2xl overflow-hidden border border-white/10">
-              <img alt="Simulator User Flow Animation" class="w-full h-full object-cover" src="media/fillersimimage.png"/>
-            </div>
-          </div>
-        </section>
-
-        <section class="py-20 px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center text-white mb-12">Featured Courses</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
-                    <div class="p-6 flex-grow">
-                        <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--primary-color)]/10 text-[var(--primary-color)]">
-                            <span class="material-symbols-outlined text-3xl">candlestick_chart</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Options Trading Basics</h3>
-                        <p class="text-white/60 text-sm">Learn the fundamentals of options trading, including calls, puts, and basic strategies.</p>
-                    </div>
-                    <button class="w-full text-center py-4 bg-[var(--primary-color)] text-[#111714] font-bold hover:bg-emerald-400 transition-colors">Start Learning</button>
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="relative sticky top-0 z-50 flex items-center justify-between border-b border-solid border-b-[#293830] bg-[#111714]/80 px-4 sm:px-6 lg:px-10 py-4 backdrop-blur-md">
+                <div class="flex items-center gap-3 text-white">
+                    <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"/>
+                    </svg>
+                    <h2 class="text-white text-2xl font-bold tracking-tight">Maltio</h2>
                 </div>
-                <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
-                    <div class="p-6 flex-grow">
-                        <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--secondary-color)]/10 text-[var(--secondary-color)]">
-                            <span class="material-symbols-outlined text-3xl">trending_up</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Advanced Strategies</h3>
-                        <p class="text-white/60 text-sm">Dive into advanced strategies like spreads, straddles, and butterflies to maximize your returns.</p>
-                    </div>
-                    <button class="w-full text-center py-4 bg-[var(--secondary-color)] text-white font-bold hover:bg-sky-400 transition-colors">Start Learning</button>
-                </div>
-                <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
-                    <div class="p-6 flex-grow">
-                        <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--primary-color)]/10 text-[var(--primary-color)]">
-                            <span class="material-symbols-outlined text-3xl">shield</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Risk Management</h3>
-                        <p class="text-white/60 text-sm">Understand and manage the risks associated with options trading to protect your investments.</p>
-                    </div>
-                    <button class="w-full text-center py-4 bg-[var(--primary-color)] text-[#111714] font-bold hover:bg-emerald-400 transition-colors">Start Learning</button>
-                </div>
-                <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
-                    <div class="p-6 flex-grow">
-                        <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--secondary-color)]/10 text-[var(--secondary-color)]">
-                            <span class="material-symbols-outlined text-3xl">receipt_long</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Tax Implications</h3>
-                        <p class="text-white/60 text-sm">Navigate the complex tax landscape of options trading to optimize your tax efficiency.</p>
-                    </div>
-                    <button class="w-full text-center py-4 bg-[var(--secondary-color)] text-white font-bold hover:bg-sky-400 transition-colors">Start Learning</button>
-                </div>
-            </div>
-        </section>
 
-        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a221d]">
-          <h2 class="text-4xl font-bold text-center text-white mb-12">Meet the Makers</h2>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-            <div class="bg-[#2a3630] rounded-xl overflow-hidden hover-lift flex flex-col md:flex-row md:items-stretch">
-              <img alt="Aaron Milner" src="media/aaron.png" class="w-full md:w-1/2 h-56 md:h-full object-cover"/>
-              <div class="p-6 flex flex-col justify-center">
-                <h3 class="text-xl font-bold text-white mb-1">Aaron Milner</h3>
-                <p class="text-white/60 text-sm mb-2">Software Engineer</p>
-                <p class="text-white/80 text-sm">Aaron is a software engineer responsible for building the user-friendly interface of our platform. He has experience as a developer at Fifth Third Bank and as an emerging technology engineer.</p>
-              </div>
-            </div>
+                <div class="flex items-center gap-4">
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Home</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Learning</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">News</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulator</a>
+                    </nav>
+                    
+                    <button id="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden flex items-center justify-center text-white hover:text-[var(--secondary-color)] transition-colors">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <span class="sr-only">Open menu</span>
+                    </button>
 
-            <div class="bg-[#2a3630] rounded-xl overflow-hidden hover-lift flex flex-col md:flex-row md:items-stretch">
-              <img alt="Eurydice Lunnemann" src="media/eurydice.jpg" class="w-full md:w-1/2 h-56 md:h-full object-cover"/>
-              <div class="p-6 flex flex-col justify-center">
-                <h3 class="text-xl font-bold text-white mb-1">Eurydice Lunnemann</h3>
-                <p class="text-white/60 text-sm mb-2">Software/Cyber Engineer</p>
-                <p class="text-white/80 text-sm">Eurydice brings her expertise in software and cybersecurity to ensure the platform is secure. She is the key architect behind our risk-free trading simulator.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+                    <button type="button" class="flex items-center justify-center rounded-full size-12 bg-[#293830] hover:bg-[var(--secondary-color)] text-white transition-colors">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
 
-      <footer class="border-t border-solid border-t-[#293830]">
-        <div class="max-w-7xl mx-auto px-5 py-10 text-center">
-          <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
-            <a class="text-white/60 hover:text-white transition-colors" href="#">Terms of Service</a>
-            <a class="text-white/60 hover:text-white transition-colors" href="#">Privacy Policy</a>
-            <a class="text-white/60 hover:text-white transition-colors" href="#">Contact Us</a>
-          </div>
-          <p class="text-white/40 text-sm">© 2025 Maltio. All rights reserved.</p>
+                <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-x-0 top-[64px] bg-[#1a221d] border-b border-solid border-b-[#293830] py-4 z-40">
+                    <nav class="flex flex-col items-center gap-4">
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Home</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Learning</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">News</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Simulator</a>
+                    </nav>
+                </div>
+            </header>
+
+            <main class="flex-1">
+                <section class="text-center py-20 px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-4xl md:text-7xl font-black text-white leading-tight tracking-tighter">
+                        Unlock Your Stock Option <span class="text-[var(--primary-color)]">Potential</span>
+                    </h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-base text-white/70 sm:text-lg">Master the art of stock options with our interactive simulator and comprehensive courses.</p>
+                    <div class="mt-10 flex flex-wrap justify-center gap-4 flex-col sm:flex-row items-center">
+                        <button class="flex w-full sm:w-auto items-center justify-center rounded-lg h-12 px-6 bg-[var(--primary-color)] text-[#111714] text-base font-bold tracking-wide shadow-lg shadow-[var(--primary-color)]/20 hover:bg-emerald-400 transition-all duration-300 transform hover:scale-105">
+                            <span>Start Learning</span>
+                        </button>
+                        <button class="flex w-full sm:w-auto items-center justify-center rounded-lg h-12 px-6 bg-transparent border-2 border-[var(--secondary-color)] text-[var(--secondary-color)] text-base font-bold tracking-wide shadow-lg shadow-[var(--secondary-color)]/20 hover:bg-[var(--secondary-color)] hover:text-white transition-all duration-300 transform hover:scale-105">
+                            <span>Try Simulator</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="py-16 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="w-full aspect-video rounded-xl shadow-2xl overflow-hidden border border-white/10">
+                            <img alt="Simulator User Flow Animation" class="w-full h-full object-cover" src="media/fillersimimage.png"/>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-20 px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">Featured Courses</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                        <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                            <div class="p-6 flex-grow">
+                                <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--primary-color)]/10 text-[var(--primary-color)]">
+                                    <span class="material-symbols-outlined text-3xl">candlestick_chart</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Options Trading Basics</h3>
+                                <p class="text-white/60 text-sm">Learn the fundamentals of options trading, including calls, puts, and basic strategies.</p>
+                            </div>
+                            <button class="w-full text-center py-4 bg-[var(--primary-color)] text-[#111714] font-bold hover:bg-emerald-400 transition-colors">Start Learning</button>
+                        </div>
+                        <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                            <div class="p-6 flex-grow">
+                                <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--secondary-color)]/10 text-[var(--secondary-color)]">
+                                    <span class="material-symbols-outlined text-3xl">trending_up</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Advanced Strategies</h3>
+                                <p class="text-white/60 text-sm">Dive into advanced strategies like spreads, straddles, and butterflies to maximize your returns.</p>
+                            </div>
+                            <button class="w-full text-center py-4 bg-[var(--secondary-color)] text-white font-bold hover:bg-sky-400 transition-colors">Start Learning</button>
+                        </div>
+                        <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                            <div class="p-6 flex-grow">
+                                <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--primary-color)]/10 text-[var(--primary-color)]">
+                                    <span class="material-symbols-outlined text-3xl">shield</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Risk Management</h3>
+                                <p class="text-white/60 text-sm">Understand and manage the risks associated with options trading to protect your investments.</p>
+                            </div>
+                            <button class="w-full text-center py-4 bg-[var(--primary-color)] text-[#111714] font-bold hover:bg-emerald-400 transition-colors">Start Learning</button>
+                        </div>
+                        <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                            <div class="p-6 flex-grow">
+                                <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--secondary-color)]/10 text-[var(--secondary-color)]">
+                                    <span class="material-symbols-outlined text-3xl">receipt_long</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Tax Implications</h3>
+                                <p class="text-white/60 text-sm">Navigate the complex tax landscape of options trading to optimize your tax efficiency.</p>
+                            </div>
+                            <button class="w-full text-center py-4 bg-[var(--secondary-color)] text-white font-bold hover:bg-sky-400 transition-colors">Start Learning</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a221d]">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">Meet the Makers</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+                        <div class="bg-[#2a3630] rounded-xl overflow-hidden hover-lift flex flex-col md:flex-row md:items-stretch">
+                            <img alt="Aaron Milner" src="media/aaron.png" class="w-full md:w-1/2 h-56 md:h-full object-cover"/>
+                            <div class="p-6 flex flex-col justify-center">
+                                <h3 class="text-xl font-bold text-white mb-1">Aaron Milner</h3>
+                                <p class="text-white/60 text-sm mb-2">Software Engineer</p>
+                                <p class="text-white/80 text-sm">Aaron is a software engineer responsible for building the user-friendly interface of our platform. He has experience as a developer at Fifth Third Bank and as an emerging technology engineer.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#2a3630] rounded-xl overflow-hidden hover-lift flex flex-col md:flex-row md:items-stretch">
+                            <img alt="Eurydice Lunnemann" src="media/eurydice.jpg" class="w-full md:w-1/2 h-56 md:h-full object-cover"/>
+                            <div class="p-6 flex flex-col justify-center">
+                                <h3 class="text-xl font-bold text-white mb-1">Eurydice Lunnemann</h3>
+                                <p class="text-white/60 text-sm mb-2">Software/Cyber Engineer</p>
+                                <p class="text-white/80 text-sm">Eurydice brings her expertise in software and cybersecurity to ensure the platform is secure. She is the key architect behind our risk-free trading simulator.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="border-t border-solid border-t-[#293830]">
+                <div class="max-w-7xl mx-auto px-5 py-10 text-center">
+                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Terms of Service</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Privacy Policy</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Contact Us</a>
+                    </div>
+                    <p class="text-white/40 text-sm">© 2025 Maltio. All rights reserved.</p>
+                </div>
+            </footer>
         </div>
-      </footer>
     </div>
-  </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const hamburgerButton = document.getElementById('hamburger-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const mobileLinks = document.querySelectorAll('.mobile-link');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
 
-      if (!hamburgerButton || !mobileMenu) return;
+            if (!hamburgerButton || !mobileMenu) return;
 
-      const setAria = (open) => {
-        hamburgerButton.setAttribute('aria-expanded', String(open));
-      };
+            const setAria = (open) => {
+                hamburgerButton.setAttribute('aria-expanded', String(open));
+            };
 
-      hamburgerButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = mobileMenu.classList.contains('is-open');
-        mobileMenu.classList.toggle('is-open');
-        setAria(!isOpen);
-      });
+            hamburgerButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = mobileMenu.classList.contains('is-open');
+                mobileMenu.classList.toggle('is-open');
+                setAria(!isOpen);
+            });
 
-      // Close when a mobile nav link is clicked
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          if (mobileMenu.classList.contains('is-open')) {
-            mobileMenu.classList.remove('is-open');
-            setAria(false);
-          }
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('is-open')) {
+                        mobileMenu.classList.remove('is-open');
+                        setAria(false);
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!mobileMenu.contains(target) && !hamburgerButton.contains(target)) {
+                    mobileMenu.classList.remove('is-open');
+                    setAria(false);
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+                    mobileMenu.classList.remove('is-open');
+                    setAria(false);
+                }
+            });
         });
-      });
-
-      // Close when clicking outside
-      document.addEventListener('click', (e) => {
-        const target = e.target;
-        if (!mobileMenu.contains(target) && !hamburgerButton.contains(target)) {
-          mobileMenu.classList.remove('is-open');
-          setAria(false);
-        }
-      });
-
-      // Close on Escape
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
-          mobileMenu.classList.remove('is-open');
-          setAria(false);
-        }
-      });
-    });
-  </script>
+    </script>
 </body>
 </html>
