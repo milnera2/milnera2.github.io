@@ -20,14 +20,27 @@
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
     }
+
+    @layer components {
+      .mobile-menu {
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
+      }
+
+      .mobile-menu.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   </style>
 </head>
 <body class="bg-[#111714]">
   <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
     <div class="layout-container flex h-full grow flex-col">
-      <!-- header -->
       <header class="relative sticky top-0 z-50 flex items-center justify-between border-b border-solid border-b-[#293830] bg-[#111714]/80 px-4 sm:px-6 lg:px-10 py-4 backdrop-blur-md">
-        <!-- Logo -->
         <div class="flex items-center gap-3 text-white">
           <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
             <path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"/>
@@ -35,17 +48,14 @@
           <h2 class="text-white text-2xl font-bold tracking-tight">Maltio</h2>
         </div>
 
-        <!-- Nav links (desktop) -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Home</a>
-          <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Learning</a>
-          <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">News</a>
-          <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulator</a>
-        </nav>
-
-        <!-- Right side: hamburger + login -->
         <div class="flex items-center gap-4">
-          <!-- Hamburger (mobile only) -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Home</a>
+            <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Learning</a>
+            <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">News</a>
+            <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulator</a>
+          </nav>
+          
           <button id="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden flex items-center justify-center text-white hover:text-[var(--secondary-color)] transition-colors">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -53,14 +63,12 @@
             <span class="sr-only">Open menu</span>
           </button>
 
-          <!-- Login button (always last, far right) -->
-          <button type="button" class="flex items-center justify-center rounded-full bg-[#293830] hover:bg-[var(--secondary-color)] text-white transition-colors">
+          <button type="button" class="flex items-center justify-center rounded-full size-12 bg-[#293830] hover:bg-[var(--secondary-color)] text-white transition-colors">
             <span class="material-symbols-outlined">person</span>
           </button>
         </div>
 
-        <!-- Mobile menu (nav links only) -->
-        <div id="mobile-menu" class="hidden md:hidden absolute inset-x-0 top-full bg-[#1a221d] border-b border-solid border-b-[#293830] py-4 shadow-lg z-50">
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-x-0 top-[64px] bg-[#1a221d] border-b border-solid border-b-[#293830] py-4 z-40">
           <nav class="flex flex-col items-center gap-4">
             <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Home</a>
             <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Learning</a>
@@ -70,9 +78,7 @@
         </div>
       </header>
 
-      <!-- main -->
       <main class="flex-1">
-        <!-- hero -->
         <section class="text-center py-20 px-4 sm:px-6 lg:px-8">
           <h1 class="text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter">
             Unlock Your Stock Option <span class="text-[var(--primary-color)]">Potential</span>
@@ -88,7 +94,6 @@
           </div>
         </section>
 
-        <!-- video -->
         <section class="py-16 px-4 sm:px-6 lg:px-8">
           <div class="max-w-5xl mx-auto">
             <div class="w-full aspect-video rounded-xl shadow-2xl overflow-hidden border border-white/10">
@@ -97,19 +102,55 @@
           </div>
         </section>
 
-        <!-- courses -->
         <section class="py-20 px-4 sm:px-6 lg:px-8">
-          <h2 class="text-4xl font-bold text-center text-white mb-12">Featured Courses</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            <!-- Course cards ... (unchanged) -->
-          </div>
+            <h2 class="text-4xl font-bold text-center text-white mb-12">Featured Courses</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                    <div class="p-6 flex-grow">
+                        <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--primary-color)]/10 text-[var(--primary-color)]">
+                            <span class="material-symbols-outlined text-3xl">candlestick_chart</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Options Trading Basics</h3>
+                        <p class="text-white/60 text-sm">Learn the fundamentals of options trading, including calls, puts, and basic strategies.</p>
+                    </div>
+                    <button class="w-full text-center py-4 bg-[var(--primary-color)] text-[#111714] font-bold hover:bg-emerald-400 transition-colors">Start Learning</button>
+                </div>
+                <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                    <div class="p-6 flex-grow">
+                        <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--secondary-color)]/10 text-[var(--secondary-color)]">
+                            <span class="material-symbols-outlined text-3xl">trending_up</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Advanced Strategies</h3>
+                        <p class="text-white/60 text-sm">Dive into advanced strategies like spreads, straddles, and butterflies to maximize your returns.</p>
+                    </div>
+                    <button class="w-full text-center py-4 bg-[var(--secondary-color)] text-white font-bold hover:bg-sky-400 transition-colors">Start Learning</button>
+                </div>
+                <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                    <div class="p-6 flex-grow">
+                        <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--primary-color)]/10 text-[var(--primary-color)]">
+                            <span class="material-symbols-outlined text-3xl">shield</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Risk Management</h3>
+                        <p class="text-white/60 text-sm">Understand and manage the risks associated with options trading to protect your investments.</p>
+                    </div>
+                    <button class="w-full text-center py-4 bg-[var(--primary-color)] text-[#111714] font-bold hover:bg-emerald-400 transition-colors">Start Learning</button>
+                </div>
+                <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                    <div class="p-6 flex-grow">
+                        <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--secondary-color)]/10 text-[var(--secondary-color)]">
+                            <span class="material-symbols-outlined text-3xl">receipt_long</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Tax Implications</h3>
+                        <p class="text-white/60 text-sm">Navigate the complex tax landscape of options trading to optimize your tax efficiency.</p>
+                    </div>
+                    <button class="w-full text-center py-4 bg-[var(--secondary-color)] text-white font-bold hover:bg-sky-400 transition-colors">Start Learning</button>
+                </div>
+            </div>
         </section>
 
-        <!-- Meet the Makers -->
         <section class="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a221d]">
           <h2 class="text-4xl font-bold text-center text-white mb-12">Meet the Makers</h2>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-            <!-- Aaron -->
             <div class="bg-[#2a3630] rounded-xl overflow-hidden hover-lift flex flex-col md:flex-row md:items-stretch">
               <img alt="Aaron Milner" src="media/aaron.png" class="w-full md:w-1/2 h-56 md:h-full object-cover"/>
               <div class="p-6 flex flex-col justify-center">
@@ -119,7 +160,6 @@
               </div>
             </div>
 
-            <!-- Eurydice -->
             <div class="bg-[#2a3630] rounded-xl overflow-hidden hover-lift flex flex-col md:flex-row md:items-stretch">
               <img alt="Eurydice Lunnemann" src="media/eurydice.jpg" class="w-full md:w-1/2 h-56 md:h-full object-cover"/>
               <div class="p-6 flex flex-col justify-center">
@@ -132,7 +172,6 @@
         </section>
       </main>
 
-      <!-- footer -->
       <footer class="border-t border-solid border-t-[#293830]">
         <div class="max-w-7xl mx-auto px-5 py-10 text-center">
           <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
@@ -146,7 +185,6 @@
     </div>
   </div>
 
-  <!-- scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const hamburgerButton = document.getElementById('hamburger-button');
@@ -161,16 +199,16 @@
 
       hamburgerButton.addEventListener('click', (e) => {
         e.stopPropagation();
-        const isHidden = mobileMenu.classList.contains('hidden');
-        mobileMenu.classList.toggle('hidden');
-        setAria(isHidden);
+        const isOpen = mobileMenu.classList.contains('is-open');
+        mobileMenu.classList.toggle('is-open');
+        setAria(!isOpen);
       });
 
       // Close when a mobile nav link is clicked
       mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-          if (!mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
+          if (mobileMenu.classList.contains('is-open')) {
+            mobileMenu.classList.remove('is-open');
             setAria(false);
           }
         });
@@ -178,19 +216,17 @@
 
       // Close when clicking outside
       document.addEventListener('click', (e) => {
-        if (!mobileMenu.classList.contains('hidden')) {
-          const target = e.target;
-          if (!mobileMenu.contains(target) && !hamburgerButton.contains(target)) {
-            mobileMenu.classList.add('hidden');
-            setAria(false);
-          }
+        const target = e.target;
+        if (!mobileMenu.contains(target) && !hamburgerButton.contains(target)) {
+          mobileMenu.classList.remove('is-open');
+          setAria(false);
         }
       });
 
       // Close on Escape
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
+        if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+          mobileMenu.classList.remove('is-open');
           setAria(false);
         }
       });
