@@ -1,146 +1,180 @@
-<html><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<title>Stitch Design</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style type="text/tailwindcss">
-      :root {
-        --primary-color: #13a4ec;
-        --secondary-color: #22c55e;
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Maltio - Stock Option Learning</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #36e28c;
+            --secondary-color: #00bfff;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
     </style>
 </head>
-<body class="bg-[#111618] text-white" style='font-family: Manrope, "Noto Sans", sans-serif;'>
-<div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#283339] bg-[#111618]/80 px-10 py-4 backdrop-blur-sm">
-<div class="flex items-center gap-3 text-white">
-<svg class="h-8 w-8 text-[var(--secondary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_330)">
-<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
-</g>
-<defs>
-<clipPath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clipPath>
-</defs>
-</svg>
-<h2 class="text-white text-2xl font-bold tracking-tight">Maltio</h2>
-</div>
-<nav class="flex items-center gap-8">
-<a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Learn</a>
-<a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulate</a>
-<a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Community</a>
-<a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Pricing</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="flex min-w-[100px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-6 bg-[#283339] text-white text-sm font-bold leading-normal tracking-[-0.015em] hover:bg-[#344147] transition-colors">
-<span class="truncate">Log In</span>
-</button>
-<button class="flex min-w-[100px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-6 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-[-0.015em] hover:bg-opacity-90 transition-opacity">
-<span class="truncate">Get Started</span>
-</button>
-</div>
-</header>
-<main class="flex flex-1 justify-center py-20">
-<div class="layout-content-container flex flex-col max-w-6xl flex-1 gap-24">
-<section class="grid grid-cols-1 lg:grid-cols-2 items-center gap-16 px-8">
-<div class="flex flex-col gap-6 text-left">
-<h1 class="text-5xl font-extrabold leading-tight tracking-tighter md:text-6xl">
-                  Master Stock Options with Our
-                  <span class="text-[var(--secondary-color)]">Dynamic Simulator</span>
-</h1>
-<p class="text-lg text-white/70">
-                  Learn to trade stock options risk-free with our interactive simulator. Gain confidence and expertise before investing real money.
-                </p>
-<div class="flex gap-4 mt-4">
-<button class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-[-0.015em] hover:bg-opacity-90 transition-opacity">
-<span class="truncate">Start Simulating</span>
-</button>
-<button class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#283339] text-white text-base font-bold leading-normal tracking-[-0.015em] hover:bg-[#344147] transition-colors">
-<span class="truncate">Explore Courses</span>
-</button>
-</div>
-</div>
-<div class="relative w-full aspect-video rounded-xl shadow-2xl shadow-[var(--secondary-color)]/20 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA37ZRxvtISsESZrXSYsvBN2rBvUTApNym_x81fSGu3T74Stbqv5huoXCddi3xxL-EVKPCfUuUBxA28zA2_TTZc0ywtDhrWFVRL_0Lo662WUi5K1lpcbDdE86zcqZhcRR2hNfaE5z_DuQ-afYel1rjRwPEhPjj9YkY3pgJhT606ZBw_D_euua18anM5X1FW3IbKkxQjlzQgCUeYqKkXHqkiK3U4RPvgloIbDAvMgh4tP3zeBS48AXJfJiSmxILlh8z0fLLJVNyZ0E1w");'></div>
-</div>
-</section>
-<section class="flex flex-col gap-8 px-8">
-<h2 class="text-4xl font-bold leading-tight tracking-tight text-center">Featured Learning Paths</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="flex flex-col gap-4 rounded-xl bg-[#1a2125] p-6 border border-[#283339] hover:border-[var(--primary-color)] transition-all transform hover:-translate-y-1">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWCusfb-OqSFaJxhnua5XdYfevGaFhnll1A10HQHhBmO69FGpl-UJvWPGccXmYTSG2VMQNOg8hXXuXJi-xYlaWYmvKyhPOtef8sskFckmGmAG7rcAp-eMSfYtbvOu7ZynYhFwkWtz_1qrkuZVeuFp2QZLzszfxrADIb6lQ3_jPZY2BIqwuPgFChExtt0PTbZdcYHWXIc9VwtnfddUlHymQDlK857Cy0GN0sQ25DXyGyBP8MNmbW9yA2N14pvVb7S_6CAOam67X7MO9");'></div>
-<div class="flex flex-col gap-2">
-<h3 class="text-xl font-bold text-[var(--primary-color)]">Options Trading Basics</h3>
-<p class="text-white/70 text-base font-normal">Learn the fundamentals of options trading, including calls, puts, and basic strategies.</p>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-xl bg-[#1a2125] p-6 border border-[#283339] hover:border-[var(--primary-color)] transition-all transform hover:-translate-y-1">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAI_Xd4V_qkQIjG0C-BElBStTZzfSYV9P4GOENolQTmJLo7QlJDmonvFi1vdebIdW-AVATg92Z45ACxFagqn8icWMqGrXdsThZZbL5heRQaRODR3uwPetHHGAPlyIxUQMrh01CbYL50P06ndRFBDLLRKpqZoEoU2iNdvFApZwwMrV-RqWWUIfH3mADDgQ3Mm4bnPjFpQ2gi9PMY1ual3XPWmCgMuJXA6MCs34FcW3blqGz7NVRjEA9cqNEhvZ_hkZARopMMg1__jQRs");'></div>
-<div class="flex flex-col gap-2">
-<h3 class="text-xl font-bold text-[var(--primary-color)]">Advanced Options Strategies</h3>
-<p class="text-white/70 text-base font-normal">Explore advanced strategies like spreads, straddles, and butterflies to maximize profits.</p>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-xl bg-[#1a2125] p-6 border border-[#283339] hover:border-[var(--primary-color)] transition-all transform hover:-translate-y-1">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuActNcp9iOpxu5rFMweNFh2EzsBEYlkAO3ULZeYlyH1R-_vSZ911da4c7-7XjebL-RKjwO3s4gZCaJx3CLmOwavBlZ0pp0WIbrj3Fjx-CxrsiKe7sUmtSbAWDmwuPmVQqS1klVTI2t7HlkaBhzdu5ahnHiSDFHdNgk8i51VbwxVz643AIXRbnYv55zoywW8-5Fapu8lvs1kjMPjY6lkkkw5YEwgWuFPSMJNPFuHncHglXOpZoXpSiOTDzJfAoXEnUSQJ7LOOVjsFDPb");'></div>
-<div class="flex flex-col gap-2">
-<h3 class="text-xl font-bold text-[var(--primary-color)]">Risk Management in Options</h3>
-<p class="text-white/70 text-base font-normal">Understand and manage risks associated with options trading to protect your investments.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="flex flex-col gap-8 px-8">
-<h2 class="text-4xl font-bold leading-tight tracking-tight text-center">Meet the Makers</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-8">
-<div class="flex flex-col items-center gap-4 text-center">
-<div class="w-32 h-32">
-<div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-full border-4 border-[var(--secondary-color)] shadow-lg shadow-[var(--secondary-color)]/30" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAG-2kq2yq-WLeNrpAXJK_ttHepMZbYkHu5TcEYBVzJgKx1UJ1iHo1go0NWjvwdPKek9v6iYRt1BPSIgXWHnDncRxqT5Cv_N_nNJdBNloqF_7PyQfAjYD6gs7Ak7qPBtkJ2ANLE3nq791huK1hyu5X0jDwDZz-7eLHc9m98DwUwvgafcc9K_QJw89RlVSBBe93QewB8xK0NYTJYhuhKYIRWa1lu3LAMQB9j1Uqzc8m19rw6TqqwwVdQf8BzJg1Zwy7xmGQLMlmUS7q8");'></div>
-</div>
-<div class="flex flex-col gap-1">
-<p class="text-xl font-bold">Alex Turner</p>
-<p class="text-white/70 text-base max-w-sm">Experienced options trader and financial analyst with over 10 years in the market.</p>
-</div>
-</div>
-<div class="flex flex-col items-center gap-4 text-center">
-<div class="w-32 h-32">
-<div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-full border-4 border-[var(--secondary-color)] shadow-lg shadow-[var(--secondary-color)]/30" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9r48PTjfNEndVVAAU9uKcTEK6vccDby2TWZTj_ABhEc6k75YtyPXvTd9dafLVvjaTzBZzo2bwINnfkEkoKVwF5HDbjXKuw_pJ6BHGl5LTuXvFv7fDCZGk7SoICai_b6LWtQxhGwPbV9N3SB1XcrLYLE27BKbcRjzbl96AYkoAxaP9ncgJHybIF8aPHKbqDicCwDUj1CPZjrG0FlBDFMgXyINuFan-dQ5R9RX8eJwc07AISTPkPw1MucereERQokYpwFgxtjYUPH8z");'></div>
-</div>
-<div class="flex flex-col gap-1">
-<p class="text-xl font-bold">Sophia Clark</p>
-<p class="text-white/70 text-base max-w-sm">Expert in options trading education and curriculum development.</p>
-</div>
-</div>
-</div>
-</section>
-</div>
-</main>
-<footer class="flex justify-center border-t border-solid border-[#283339]">
-<div class="flex max-w-6xl flex-1 flex-col">
-<div class="flex flex-col items-center gap-8 px-5 py-10 text-center sm:flex-row sm:justify-between">
-<div class="flex items-center gap-3 text-white">
-<svg class="h-6 w-6 text-[var(--secondary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_330_footer)">
-<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
-</g>
-<defs>
-<clipPath id="clip0_6_330_footer"><rect fill="white" height="48" width="48"></rect></clipPath>
-</defs>
-</svg>
-<h2 class="text-white text-xl font-bold tracking-tight">Maltio</h2>
-</div>
-<nav class="flex flex-wrap items-center justify-center gap-6">
-<a class="text-white/60 hover:text-white transition-colors text-base" href="#">Terms of Service</a>
-<a class="text-white/60 hover:text-white transition-colors text-base" href="#">Privacy Policy</a>
-<a class="text-white/60 hover:text-white transition-colors text-base" href="#">Contact Us</a>
-</nav>
-<p class="text-white/60 text-base">© 2024 Maltio. All rights reserved.</p>
-</div>
-</div>
-</footer>
-</div>
-</div>
+<body class="bg-[#111714]">
+    <div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#293830] bg-[#111714]/80 px-10 py-4 backdrop-blur-md">
+                <div class="flex items-center gap-3 text-white">
+                    <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_6_330)">
+                            <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_6_330">
+                                <rect fill="white" height="48" width="48"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <h2 class="text-white text-2xl font-bold tracking-tight">Maltio</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Home</a>
+                    <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Learning</a>
+                    <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">News</a>
+                    <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulator</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button id="hamburger-button" class="md:hidden flex items-center justify-center size-10 text-white hover:text-[var(--secondary-color)] transition-colors">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    <button class="flex items-center justify-center rounded-full size-10 bg-[#293830] hover:bg-[var(--secondary-color)] text-white transition-colors">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+                <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#1a221d] border-b border-solid border-b-[#293830] py-4 shadow-lg">
+                    <nav class="flex flex-col items-center gap-4">
+                        <a class="text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Home</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Learning</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">News</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Simulator</a>
+                    </nav>
+                </div>
+            </header>
+            <main class="flex-1">
+                <section class="text-center py-20 px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter">
+                        Unlock Your Stock Option <span class="text-[var(--primary-color)]">Potential</span>
+                    </h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-white/70">Master the art of stock options with our interactive simulator and comprehensive courses.</p>
+                    <div class="mt-10 flex justify-center gap-4">
+                        <button class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-[var(--primary-color)] text-[#111714] text-base font-bold tracking-wide shadow-lg shadow-[var(--primary-color)]/20 hover:bg-emerald-400 transition-all duration-300 transform hover:scale-105">
+                            <span>Start Learning</span>
+                        </button>
+                        <button class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-transparent border-2 border-[var(--secondary-color)] text-[var(--secondary-color)] text-base font-bold tracking-wide shadow-lg shadow-[var(--secondary-color)]/20 hover:bg-[var(--secondary-color)] hover:text-white transition-all duration-300 transform hover:scale-105">
+                            <span>Try Simulator</span>
+                        </button>
+                    </div>
+                </section>
+                <section class="py-16 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="w-full aspect-video rounded-xl shadow-2xl overflow-hidden border border-white/10">
+                            <img alt="Simulator User Flow Animation" class="w-full h-full object-cover" src="media/fillersimimage.png"/>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20 px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-4xl font-bold text-center text-white mb-12">Featured Courses</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                        <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                            <div class="p-6 flex-grow">
+                                <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--primary-color)]/10 text-[var(--primary-color)]">
+                                    <span class="material-symbols-outlined text-3xl">candlestick_chart</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Options Trading Basics</h3>
+                                <p class="text-white/60 text-sm">Learn the fundamentals of options trading, including calls, puts, and basic strategies.</p>
+                            </div>
+                            <button class="w-full text-center py-4 bg-[var(--primary-color)] text-[#111714] font-bold hover:bg-emerald-400 transition-colors">Start Learning</button>
+                        </div>
+                        <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                            <div class="p-6 flex-grow">
+                                <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--secondary-color)]/10 text-[var(--secondary-color)]">
+                                    <span class="material-symbols-outlined text-3xl">trending_up</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Advanced Strategies</h3>
+                                <p class="text-white/60 text-sm">Dive into advanced strategies like spreads, straddles, and butterflies to maximize your returns.</p>
+                            </div>
+                            <button class="w-full text-center py-4 bg-[var(--secondary-color)] text-white font-bold hover:bg-sky-400 transition-colors">Start Learning</button>
+                        </div>
+                        <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                            <div class="p-6 flex-grow">
+                                <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--primary-color)]/10 text-[var(--primary-color)]">
+                                    <span class="material-symbols-outlined text-3xl">shield</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Risk Management</h3>
+                                <p class="text-white/60 text-sm">Understand and manage the risks associated with options trading to protect your investments.</p>
+                            </div>
+                            <button class="w-full text-center py-4 bg-[var(--primary-color)] text-[#111714] font-bold hover:bg-emerald-400 transition-colors">Start Learning</button>
+                        </div>
+                        <div class="bg-[#1a221d] rounded-xl overflow-hidden flex flex-col hover-lift">
+                            <div class="p-6 flex-grow">
+                                <div class="mb-4 size-12 flex items-center justify-center rounded-lg bg-[var(--secondary-color)]/10 text-[var(--secondary-color)]">
+                                    <span class="material-symbols-outlined text-3xl">receipt_long</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Tax Implications</h3>
+                                <p class="text-white/60 text-sm">Navigate the complex tax landscape of options trading to optimize your tax efficiency.</p>
+                            </div>
+                            <button class="w-full text-center py-4 bg-[var(--secondary-color)] text-white font-bold hover:bg-sky-400 transition-colors">Start Learning</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a221d]">
+                    <h2 class="text-4xl font-bold text-center text-white mb-12">Meet the Makers</h2>
+                    <div class="flex flex-wrap justify-center gap-12 max-w-4xl mx-auto">
+                        <div class="flex flex-col items-center text-center">
+                            <img alt="Sophia Carter" class="size-32 rounded-full mb-4 border-4 border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB3GM2X3_sw_eXm0OJ2zSUy4nhHlVFsADZAQ_gOPHrsWwsQF2s4V2c7RTqF46lbtOlRg8Oa7o8Tf05u_Fd77S8mnG-zQo6515rTo2xiNtKkxt723h0eZP0EnAzTnIBIpXTH26pdAyuCOIM3MsnVRvdlu8eqE-ZGpSrCISbFtAolaoeWQF_gNFII1hz2Oof0_2xXXFZ7_CzEaL08bB9_GUNmfsmfInGMfslJ1Qi-lVHrdDBTwEDu5MK7tQ6LSBXcLvrPQFsk54Sszwd"/>
+                            <h3 class="text-xl font-bold text-white">Sophia Carter</h3>
+                            <p class="text-white/60">Lead Instructor</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center">
+                            <img alt="Ethan Bennett" class="size-32 rounded-full mb-4 border-4 border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGZjYvxisdnp_2vna2-iwj4LZi4toAAZZXSIGAIrMIhX4sX2Yryczsw3VsVGBMrs87tJ1QA1YWcZU5pdhKxZV5bkz4pA7xAbQdcxz2dPFP8DWBUyVOh5-IAcFWev6jEWAx2yUeqaSf7yFXC1k4vauxWgw2WR4p7psuUEeW__r2ELyIaZJBgeMUyZoPh9y8JbKbFqccO-VqScWQhn46xVA6GFWlT9P7VfVIl6HjyMFT_ok0Awz4hI93ac49j-Qnno05NcEl0xtb0vTm"/>
+                            <h3 class="text-xl font-bold text-white">Ethan Bennett</h3>
+                            <p class="text-white/60">Options Strategist</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center">
+                            <img alt="Olivia Hayes" class="size-32 rounded-full mb-4 border-4 border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqNSfpC6EWgrmli-QlNousjs9iGiY8HuUwinlGy6KhA2pQgumQf9QbBThlOZII1VMPmYLeEdLaY4CqOPXqFOXbE-41FRzGkmdPothICFY-yBEkLAOUVIAUFkKw7MWjP9RZHtvJIDDhFhNHfa-Z2OwHpR9PBdytdqWpdckO84z4Y9cAc6Mg0uSN4lO_HrvzhtT3eR06BNWhMYH6PA4AJDAXpCp-IGaB2pmvrlnjiKaCLyrw7OEELs-1qWAKDCk4IYrHaswI_cLsnB9Q"/>
+                            <h3 class="text-xl font-bold text-white">Olivia Hayes</h3>
+                            <p class="text-white/60">Financial Analyst</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="border-t border-solid border-t-[#293830]">
+                <div class="max-w-7xl mx-auto px-5 py-10 text-center">
+                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Terms of Service</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Privacy Policy</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Contact Us</a>
+                    </div>
+                    <p class="text-white/40 text-sm">© 2024 Maltio. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-</body></html>
+            if (hamburgerButton && mobileMenu) {
+                hamburgerButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
