@@ -1,88 +1,219 @@
-<html><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<title>Stitch Design</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-</head>
-
-<body class="bg-[#111618]">
-          <div id="loading-indicator" class="text-center text-gray-500 my-8">
-            <svg class="animate-spin h-8 w-8 text-gray-400 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            <p class="mt-2">Loading news feed...</p>
-        </div>
-        <div id="news-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- News items will be dynamically inserted here by JavaScript -->
-        </div>
-                <div id="error-message" class="hidden text-center text-red-600 mt-8">
-            <p>Failed to load news feed. Please try again later.</p>
-        </div>
-    <script>
-        const newsContainer = document.getElementById('news-container');
-        const loadingIndicator = document.getElementById('loading-indicator');
-        const errorMessage = document.getElementById('error-message');
-
-        // Note: Due to CORS, this will only work if the server hosting the RSS feed allows cross-origin requests.
-        // For demonstration, a proxy might be needed in a real-world scenario.
-        const RSS_FEED_URL = 'https://feeds.content.dowjones.io/public/rss/mw_topstories';
-
-        async function fetchAndRenderFeed() {
-            loadingIndicator.classList.remove('hidden');
-            errorMessage.classList.add('hidden');
-            newsContainer.innerHTML = ''; // Clear previous content
-
-            try {
-                const response = await fetch(RSS_FEED_URL);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const text = await response.text();
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(text, 'application/xml');
-
-                const items = xmlDoc.querySelectorAll('item');
-
-                if (items.length === 0) {
-                    newsContainer.innerHTML = '<p class="text-center text-gray-500">No news items found.</p>';
-                }
-
-                items.forEach(item => {
-                    const title = item.querySelector('title')?.textContent || 'No Title';
-                    const link = item.querySelector('link')?.textContent || '#';
-                    const description = item.querySelector('description')?.textContent || 'No description available.';
-
-                    // Create the HTML for a single news card
-                    const card = `
-                        <a href="${link}" target="_blank" class="block">
-                            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2 leading-tight">
-                                        ${title}
-                                    </h3>
-                                    <p class="text-gray-600 text-sm">
-                                        ${description}
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    `;
-                    newsContainer.innerHTML += card;
-                });
-            } catch (error) {
-                console.error("Error fetching or parsing RSS feed:", error);
-                errorMessage.classList.remove('hidden');
-            } finally {
-                loadingIndicator.classList.add('hidden');
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Malio - News</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #36e28c;
+            --secondary-color: #00bfff;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
         }
 
-        // Fetch the feed when the page loads
-        document.addEventListener('DOMContentLoaded', fetchAndRenderFeed);
-    </script>
+        @layer components {
+            .mobile-menu {
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
+            }
 
-</body></html>
+            .mobile-menu.is-open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#111714] text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="relative sticky top-0 z-50 flex items-center justify-between border-b border-solid border-b-[#293830] bg-[#111714]/80 px-4 sm:px-6 lg:px-10 py-4 backdrop-blur-md">
+                <div class="flex items-center gap-3 text-white">
+                    <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"/>
+                    </svg>
+                    <h2 class="text-white text-2xl font-bold tracking-tight">Malio</h2>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Home</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Learning</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">News</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulator</a>
+                    </nav>
+                    
+                    <button id="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden flex items-center justify-center text-white hover:text-[var(--secondary-color)] transition-colors">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <span class="sr-only">Open menu</span>
+                    </button>
+
+                    <button type="button" class="flex items-center justify-center rounded-full size-12 bg-[#293830] hover:bg-[var(--secondary-color)] text-white transition-colors">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+
+                <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-x-0 top-[64px] bg-[#1a221d] border-b border-solid border-b-[#293830] py-4 z-40">
+                    <nav class="flex flex-col items-center gap-4">
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Home</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Learning</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">News</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Simulator</a>
+                    </nav>
+                </div>
+            </header>
+
+            <main class="flex-1 py-16 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white text-center mb-12">Latest News</h1>
+
+                    <div id="loading-indicator" class="text-center text-white/50 my-8">
+                        <svg class="animate-spin h-8 w-8 text-[var(--primary-color)] mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <p class="mt-2">Loading news feed...</p>
+                    </div>
+
+                    <div id="news-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        </div>
+
+                    <div id="error-message" class="hidden text-center text-red-400 mt-8">
+                        <p>Failed to load news feed. Please try again later.</p>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="border-t border-solid border-t-[#293830]">
+                <div class="max-w-7xl mx-auto px-5 py-10 text-center">
+                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
+                        <a class="text-white/60 hover:text-white transition-colors" href="usercontent/ToS.html">Terms of Service</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="usercontent/privacy.html">Privacy Policy</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="usercontent/contact.html">Contact Us</a>
+                    </div>
+                    <p class="text-white/40 text-sm">© 2025 Aaron Milner. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const newsContainer = document.getElementById('news-container');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const errorMessage = document.getElementById('error-message');
+
+            if (!hamburgerButton || !mobileMenu) return;
+
+            const setAria = (open) => {
+                hamburgerButton.setAttribute('aria-expanded', String(open));
+            };
+
+            hamburgerButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = mobileMenu.classList.contains('is-open');
+                mobileMenu.classList.toggle('is-open');
+                setAria(!isOpen);
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('is-open')) {
+                        mobileMenu.classList.remove('is-open');
+                        setAria(false);
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!mobileMenu.contains(target) && !hamburgerButton.contains(target)) {
+                    mobileMenu.classList.remove('is-open');
+                    setAria(false);
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+                    mobileMenu.classList.remove('is-open');
+                    setAria(false);
+                }
+            });
+
+            // Note: Due to CORS, this will only work if the server hosting the RSS feed allows cross-origin requests.
+            // For a real-world scenario, you would need to use a proxy server to fetch the data.
+            const RSS_FEED_URL = 'https://feeds.content.dowjones.io/public/rss/mw_topstories';
+
+            async function fetchAndRenderFeed() {
+                loadingIndicator.classList.remove('hidden');
+                errorMessage.classList.add('hidden');
+                newsContainer.innerHTML = ''; // Clear previous content
+
+                try {
+                    const response = await fetch(RSS_FEED_URL);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const text = await response.text();
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(text, 'application/xml');
+
+                    const items = xmlDoc.querySelectorAll('item');
+
+                    if (items.length === 0) {
+                        newsContainer.innerHTML = '<p class="text-center text-white/50">No news items found.</p>';
+                    }
+
+                    items.forEach(item => {
+                        const title = item.querySelector('title')?.textContent || 'No Title';
+                        const link = item.querySelector('link')?.textContent || '#';
+                        const description = item.querySelector('description')?.textContent || 'No description available.';
+
+                        const card = `
+                            <a href="${link}" target="_blank" class="block">
+                                <div class="bg-[#1a221d] rounded-xl shadow-lg hover-lift h-full flex flex-col">
+                                    <div class="p-6 flex-grow">
+                                        <h3 class="text-xl font-bold text-white mb-2 leading-tight">
+                                            ${title}
+                                        </h3>
+                                        <p class="text-white/60 text-sm">
+                                            ${description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        `;
+                        newsContainer.innerHTML += card;
+                    });
+                } catch (error) {
+                    console.error("Error fetching or parsing RSS feed:", error);
+                    errorMessage.classList.remove('hidden');
+                } finally {
+                    loadingIndicator.classList.add('hidden');
+                }
+            }
+
+            fetchAndRenderFeed();
+        });
+    </script>
+</body>
+</html>
