@@ -100,29 +100,20 @@
                         <div class="space-y-4">
                             <h2 class="text-2xl font-bold text-[var(--primary-color)]">The Final Outcome:</h2>
                             <p class="text-white/80">
-                                After several more trading days, TechCorp's new product launched to great success! The stock price surged. The current market value of TechCorp is now **$35.00** per share. You reserved an option to buy at **$25.00**.
+                                Over the next year, the tech company's new product launched to great success! The stock price surged. The current market value of TechCorp is now $123.08 per share. 
+                            </p>
+                            <p class="text-white/80">
+                                Over the same year, the finance company's venture into emerging technologies went very poorly. The stock price dropped by about half. The current market value of TechCorp is now $17.04 per share. 
+                            </p>
+                            <p class="text-white/80">
+                                In the following months, the online shopping company's attempt at improving user experience went fairly well. The stock price raised by a significant amount. The current market value of TechCorp is now $189.77 per share. 
                             </p>
                         </div>
                         
                         <div class="w-full h-px bg-[#293830]"></div>
 
-                        <div class="space-y-4">
-                            <h2 class="text-2xl font-bold text-[var(--primary-color)]">Your Final Decision:</h2>
-                            <p class="text-white/80 mb-4">
-                                Do you want to exercise your option and buy TechCorp stock at your reserved price, or let the option expire?
-                            </p>
-                            <div class="flex flex-wrap justify-center gap-4 pt-4">
-                                <button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-[var(--primary-color)] text-[#111714] text-lg font-bold tracking-wide shadow-lg hover:bg-emerald-400 transition-colors duration-300">
-                                    <span>Buy Stock</span>
-                                </button>
-                                <button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-transparent border-2 border-white/60 text-white/60 text-lg font-bold tracking-wide hover:bg-white/10 transition-colors duration-300">
-                                    <span>Ignore Option</span>
-                                </button>
-                            </div>
-                        </div>
-
                         <div class="flex justify-center mt-10">
-                            <button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-[var(--secondary-color)] text-[#111714] text-lg font-bold tracking-wide shadow-lg hover:bg-sky-400 transition-all duration-300 transform hover:scale-105">
+                            <button id="play" class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-[var(--secondary-color)] text-[#111714] text-lg font-bold tracking-wide shadow-lg hover:bg-sky-400 transition-all duration-300 transform hover:scale-105">
                                 <span>Play Again</span>
                             </button>
                         </div>
@@ -147,6 +138,10 @@
         window.onload = function(){
             document.getElementById('finalval').innerHTML = "$"+sessionStorage.getItem("money");
         };
+        var play = document.getElementById("play");
+        play.addEventListener("click", () => {
+            window.location.href = "./scenario1.html";
+        })
         document.addEventListener('DOMContentLoaded', () => {
             const hamburgerButton = document.getElementById('hamburger-button');
             const mobileMenu = document.getElementById('mobile-menu');
