@@ -1,0 +1,116 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-auth.js"></script>
+</head>
+<body>
+<form>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" required>
+  </div>
+</form>
+  <button id="signUpButton">Sign up</button>
+  <button id="signInButton">Sign in</button>
+  <button id="logOutButton">Log Out</button>
+<script type="module">
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getAuth, signOut, setPersistence, onAuthStateChanged, browserLocalPersistence, browserSessionPersistence , createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+
+  // TODO: Add SDKs for Firebase products that you want to use
+
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+  // Your web app's Firebase configuration
+
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+  const firebaseConfig = {
+
+    apiKey: "AIzaSyBY1WunnAxSEXvFWf35DBn6ZYY4itkcsnU",
+
+    authDomain: "malio-d8460.firebaseapp.com",
+
+    projectId: "malio-d8460",
+
+    storageBucket: "malio-d8460.firebasestorage.app",
+
+    messagingSenderId: "384208179970",
+
+    appId: "1:384208179970:web:cc37763c19190228be281b",
+
+    measurementId: "G-DZ6ZBZYS1H"
+
+  };
+
+
+  // Initialize Firebase
+
+
+
+    // Add event listeners to the sign in and sign up buttons
+    const defaultApp = initializeApp(firebaseConfig);
+    alert(defaultApp.name);
+    const auth = getAuth(defaultApp);
+    setPersistence(auth, browserLocalPersistence);
+    var email = document.getElementById("email");
+    var password = document.getElementById("password");
+    var signInButton = document.getElementById("signInButton");
+    var signUpButton = document.getElementById("signUpButton");
+    onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        const uid = user.uid;
+        alert(uid);
+        // ...
+    } else {
+        // User is signed out
+        // ...
+    }
+    });
+    signUpButton.addEventListener("click", function() {
+    // Sign in the user using Firebase's signInWithEmailAndPassword method
+    alert(defaultApp.name);
+    createUserWithEmailAndPassword(auth, email.value, password.value)
+        .then((userCredential) => {
+        // Redirect the user to the protected resources page
+        alert("Hello");
+        })
+        .catch(function(error) {
+        // Show an error message
+        alert(error.message);
+        });
+    });
+    signInButton.addEventListener("click", function() {
+        signInWithEmailAndPassword(auth, email.value, password.value)
+        .then((userCredential) => {
+            alert("hello");
+        })
+        .catch(function(error){
+            alert(error.message);
+        });
+    })
+    logOutButton.addEventListener("click", function() {
+        signOut(auth).then(() => {
+        // Sign-out successful.
+        alert("logged out");
+        }).catch((error) => {
+        // An error happened.
+        });
+    })
+</script>
+
+
+</body>
+</html> 
