@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Malio - Options Expiration</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #36e28c;
+            --secondary-color: #00bfff;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        @layer components {
+            .mobile-menu {
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
+            }
+
+            .mobile-menu.is-open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#111714] text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="relative sticky top-0 z-50 flex items-center justify-between border-b border-solid border-b-[#293830] bg-[#111714]/80 px-4 sm:px-6 lg:px-10 py-4 backdrop-blur-md">
+                <div class="flex items-center gap-3 text-white">
+                    <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"/>
+                    </svg>
+                    <h2 class="text-white text-2xl font-bold tracking-tight">Malio</h2>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Home</a>
+                        <a class="text-[var(--primary-color)] text-base font-medium" href="#">Learning</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">News</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulator</a>
+                    </nav>
+                    
+                    <button id="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden flex items-center justify-center text-white hover:text-[var(--secondary-color)] transition-colors">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <span class="sr-only">Open menu</span>
+                    </button>
+
+                    <button type="button" class="flex items-center justify-center rounded-full size-12 bg-[#293830] hover:bg-[var(--secondary-color)] text-white transition-colors">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+
+                <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-x-0 top-[64px] bg-[#1a221d] border-b border-solid border-b-[#293830] py-4 z-40">
+                    <nav class="flex flex-col items-center gap-4">
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Home</a>
+                        <a class="mobile-link text-[var(--primary-color)] text-lg font-medium py-2" href="#">Learning</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">News</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Simulator</a>
+                    </nav>
+                </div>
+            </header>
+
+            <main class="flex-1 py-16 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-10">
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Will My Options Expire?</h1>
+                        <p class="text-lg text-white/70">Understand the concept of expiration dates and their impact on your options.</p>
+                    </div>
+
+                    <div class="bg-[#1a221d] rounded-xl p-6 space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Video Lesson</h2>
+                            <div class="w-full rounded-xl overflow-hidden">
+                                <video class="w-full h-auto" controls>
+                                    <source src="media/An_Option_s_Ticking_Clock.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Podcast</h2>
+                            <div class="w-full rounded-xl overflow-hidden">
+                                <audio class="w-full" controls>
+                                    <source src="media/Decoding_Stock_Option_Expiration__Your_Essential_Guide_to_Profi.mp4" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">In-depth Text Format</h2>
+                            <p class="text-white/80 mb-4">
+                                Yes, options do expire. Every stock option contract has a specific expiration date. This is the final day on which the option holder can exercise their right to buy or sell the underlying asset at the strike price.
+                            </p>
+                            <p class="text-white/80 mb-4">
+                                If an option is not exercised or sold before its expiration date, it becomes worthless. This is a key risk of options trading—the value of the option is tied to both the price of the underlying stock and the time remaining until expiration. As an option nears its expiration date, its "time value" decreases rapidly, a phenomenon known as time decay.
+                            </p>
+                            <p class="text-white/80">
+                                For most stock options, the expiration date falls on the third Friday of the expiration month. It is critical for an investor to be aware of an option's expiration date to avoid losing their entire investment.
+                            </p>
+                        </div>
+
+                        <div class="w-full h-px bg-[#293830] my-8"></div>
+                        
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Knowledge Check</h2>
+                            <div class="mb-4">
+                                <p class="text-lg font-medium text-white mb-2">
+                                    Question: What happens to an option that is not exercised or sold before its expiration date?
+                                </p>
+                                <button onclick="toggleAnswer()" class="flex items-center justify-center rounded-md h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide transition-colors hover:bg-[var(--secondary-color)]">
+                                    <span id="button-text">Click to Reveal Answer</span>
+                                </button>
+                            </div>
+                            <div id="answer-container" class="hidden mt-4">
+                                <p class="text-white/80">
+                                    Answer: The option expires worthless, and the investor loses the premium they paid for it.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="border-t border-solid border-t-[#293830]">
+                <div class="max-w-7xl mx-auto px-5 py-10 text-center">
+                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Terms of Service</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Privacy Policy</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Contact Us</a>
+                    </div>
+                    <p class="text-white/40 text-sm">© 2025 Aaron Milner. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (!hamburgerButton || !mobileMenu) return;
+
+            const setAria = (open) => {
+                hamburgerButton.setAttribute('aria-expanded', String(open));
+            };
+
+            hamburgerButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = mobileMenu.classList.contains('is-open');
+                mobileMenu.classList.toggle('is-open');
+                setAria(!isOpen);
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('is-open')) {
+                        mobileMenu.classList.remove('is-open');
+                        setAria(false);
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!mobileMenu.contains(target) && !hamburgerButton.contains(target)) {
+                    mobileMenu.classList.remove('is-open');
+                    setAria(false);
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+                    mobileMenu.classList.remove('is-open');
+                    setAria(false);
+                }
+            });
+            
+            // Knowledge Check Script
+            window.toggleAnswer = function() {
+                const answerContainer = document.getElementById('answer-container');
+                const buttonText = document.getElementById('button-text');
+                const isHidden = answerContainer.classList.contains('hidden');
+
+                if (isHidden) {
+                    answerContainer.classList.remove('hidden');
+                    buttonText.textContent = 'Hide Answer';
+                } else {
+                    answerContainer.classList.add('hidden');
+                    buttonText.textContent = 'Click to Reveal Answer';
+                }
+            };
+        });
+    </script>
+</body>
+</html>
