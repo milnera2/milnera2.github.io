@@ -136,7 +136,7 @@
 
     <script>
         window.onload = function(){
-            document.getElementById('finalval').innerHTML = "$"+sessionStorage.getItem("money");
+            document.getElementById('finalval').innerHTML = "$"+(Math.round(sessionStorage.getItem("money")*100))/100;
         };
         var play = document.getElementById("play");
         play.addEventListener("click", () => {
