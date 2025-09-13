@@ -90,35 +90,25 @@
                         <div>
                             <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">How to Play</h2>
                             <p class="text-white/80 mb-4">
-                                The goal of the simulation is to make as much money as possible. You will start with a virtual balance of **$100**.
+                                The goal of the simulation is to make as much money as possible. You will start with a virtual balance of $100.
                             </p>
-                            <ol class="list-decimal list-inside text-white/80 space-y-4 ml-4">
-                                <li>
-                                    **Round 1:** You will be presented with a real historical stock price and a corresponding stock option. Your first decision is whether to **reserve the option**. The cost of reserving the option will be deducted from your total balance.
-                                </li>
-                                <li>
-                                    **Rounds 2 & 3:** The stock price will change, and you will have the opportunity to either **buy** or **sell** the stock based on its new market value. You can only act on the option you chose to reserve in the first round.
-                                </li>
-                                <li>
-                                    **Outcome:** At the end of the 3 rounds, your final balance will be calculated based on your trading decisions. The goal is to see how much you can grow your initial $100.
-                                </li>
-                            </ol>
-                        </div>
+                            <p>
+                                There will be a total of three rounds. Each round will have a situation based on historical stock data. It is your job to pick the best thing to do with each.
+                            </p>
                         
                         <div class="w-full h-px bg-[#293830] my-8"></div>
 
                         <div>
-                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Rules of the Game</h2>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Your options are:</h2>
                             <ul class="list-disc list-inside text-white/80 space-y-4 ml-4">
-                                <li>You start with a fixed **$100** virtual balance.</li>
-                                <li>The simulation consists of **3 rounds** based on real historical stock data.</li>
-                                <li>You can only choose to reserve one option per simulation.</li>
-                                <li>The simulation is for **educational purposes only** and does not constitute financial advice.</li>
+                                <li>Reserve Option: take out an option on the stock</li>
+                                <li>Pass: do nothing with the stock</li>
+                                <li>Buy: directly buy a share of the stock</li>
                             </ul>
                         </div>
 
                         <div class="flex justify-center mt-10">
-                            <button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-[var(--primary-color)] text-[#111714] text-lg font-bold tracking-wide shadow-lg shadow-[var(--primary-color)]/20 hover:bg-emerald-400 transition-all duration-300 transform hover:scale-105">
+                            <button id="start" class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-[var(--primary-color)] text-[#111714] text-lg font-bold tracking-wide shadow-lg shadow-[var(--primary-color)]/20 hover:bg-emerald-400 transition-all duration-300 transform hover:scale-105">
                                 <span>Start Simulating</span>
                             </button>
                         </div>
@@ -140,6 +130,10 @@
     </div>
 
     <script>
+        var start = document.getElementById("start");
+        start.addEventListener("click", () => {
+            window.location.href = "./scenario1.html";
+        })
         document.addEventListener('DOMContentLoaded', () => {
             const hamburgerButton = document.getElementById('hamburger-button');
             const mobileMenu = document.getElementById('mobile-menu');
