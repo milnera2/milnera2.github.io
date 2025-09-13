@@ -6,7 +6,7 @@
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-    <title>Maltio - Simulator</title>
+    <title>Malio - Bullish vs Bearish</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
@@ -46,15 +46,15 @@
                     <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"/>
                     </svg>
-                    <h2 class="text-white text-2xl font-bold tracking-tight">Maltio</h2>
+                    <h2 class="text-white text-2xl font-bold tracking-tight">Malio</h2>
                 </div>
 
                 <div class="flex items-center gap-4">
                     <nav class="hidden md:flex items-center gap-8">
                         <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Home</a>
-                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Learning</a>
+                        <a class="text-[var(--primary-color)] text-base font-medium" href="#">Learning</a>
                         <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">News</a>
-                        <a class="text-[var(--primary-color)] text-base font-medium" href="#">Simulator</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulator</a>
                     </nav>
                     
                     <button id="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden flex items-center justify-center text-white hover:text-[var(--secondary-color)] transition-colors">
@@ -72,30 +72,72 @@
                 <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-x-0 top-[64px] bg-[#1a221d] border-b border-solid border-b-[#293830] py-4 z-40">
                     <nav class="flex flex-col items-center gap-4">
                         <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Home</a>
-                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Learning</a>
+                        <a class="mobile-link text-[var(--primary-color)] text-lg font-medium py-2" href="#">Learning</a>
                         <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">News</a>
-                        <a class="mobile-link text-[var(--primary-color)] text-lg font-medium py-2" href="#">Simulator</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Simulator</a>
                     </nav>
                 </div>
             </header>
 
-            <main class="flex-1 flex flex-col items-center py-16 px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10 max-w-2xl mx-auto">
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Stock Option Simulator</h1>
-                    <p class="text-lg text-white/70">Practice trading options in a risk-free environment. Test your strategies and master the market without spending a dime.</p>
-                </div>
-
-                <div class="max-w-4xl w-full mx-auto space-y-8">
-                    <div class="bg-[#1a221d] rounded-xl overflow-hidden p-6">
-                        <div class="aspect-w-16 aspect-h-9 w-full rounded-xl overflow-hidden">
-                            <img src="media/fillersimimage.png" alt="Maltio Stock Simulator Demo" class="w-full h-full object-cover"/>
-                        </div>
+            <main class="flex-1 py-16 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-10">
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Bullish vs. Bearish</h1>
+                        <p class="text-lg text-white/70">Understand the key terms and market sentiments that define bullish and bearish trends.</p>
                     </div>
-                    
-                    <div class="flex justify-center">
-                        <button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-[var(--primary-color)] text-[#111714] text-lg font-bold tracking-wide shadow-lg shadow-[var(--primary-color)]/20 hover:bg-emerald-400 transition-all duration-300 transform hover:scale-105">
-                            <span>Start Simulating</span>
-                        </button>
+
+                    <div class="bg-[#1a221d] rounded-xl p-6 space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Video Lesson</h2>
+                            <div class="w-full rounded-xl overflow-hidden">
+                                <video class="w-full h-auto" controls>
+                                    <source src="media/your-bullish-bearish-video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Podcast</h2>
+                            <div class="w-full rounded-xl overflow-hidden">
+                                <audio class="w-full" controls>
+                                    <source src="media/your-bullish-bearish-podcast.mp4" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">In-depth Text Format</h2>
+                            <p class="text-white/80 mb-4">
+                                In the world of investing, the terms "bullish" and "bearish" are used to describe market sentiment and trends. These terms are derived from the way these animals attack: a bull charges forward with its horns up, while a bear swipes its paws down.
+                            </p>
+                            <p class="text-white/80 mb-4">
+                                A "bull market" is a period of time when the prices of most stocks are rising or are expected to rise. In this optimistic environment, investors are confident, and the economy is generally considered to be healthy. Bullish investors believe that a stock or the market as a whole will increase in value.
+                            </p>
+                            <p class="text-white/80">
+                                Conversely, a "bear market" occurs when stock prices are falling or are anticipated to fall. This period is characterized by pessimism, and investors are generally more inclined to sell than buy. Bearish investors believe that a stock or the market will decline in value. Understanding these two market sentiments is essential for making informed trading and investment decisions.
+                            </p>
+                        </div>
+
+                        <div class="w-full h-px bg-[#293830] my-8"></div>
+                        
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Knowledge Check</h2>
+                            <div class="mb-4">
+                                <p class="text-lg font-medium text-white mb-2">
+                                    Question: In a bear market, what are stock prices expected to do?
+                                </p>
+                                <button onclick="toggleAnswer()" class="flex items-center justify-center rounded-md h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide transition-colors hover:bg-[var(--secondary-color)]">
+                                    <span id="button-text">Click to Reveal Answer</span>
+                                </button>
+                            </div>
+                            <div id="answer-container" class="hidden mt-4">
+                                <p class="text-white/80">
+                                    Answer: In a bear market, stock prices are expected to fall.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -107,7 +149,7 @@
                         <a class="text-white/60 hover:text-white transition-colors" href="#">Privacy Policy</a>
                         <a class="text-white/60 hover:text-white transition-colors" href="#">Contact Us</a>
                     </div>
-                    <p class="text-white/40 text-sm">© 2025 Maltio. All rights reserved.</p>
+                    <p class="text-white/40 text-sm">© 2025 Aaron Milner. All rights reserved.</p>
                 </div>
             </footer>
         </div>
@@ -155,6 +197,21 @@
                     setAria(false);
                 }
             });
+            
+            // Knowledge Check Script
+            window.toggleAnswer = function() {
+                const answerContainer = document.getElementById('answer-container');
+                const buttonText = document.getElementById('button-text');
+                const isHidden = answerContainer.classList.contains('hidden');
+
+                if (isHidden) {
+                    answerContainer.classList.remove('hidden');
+                    buttonText.textContent = 'Hide Answer';
+                } else {
+                    answerContainer.classList.add('hidden');
+                    buttonText.textContent = 'Click to Reveal Answer';
+                }
+            };
         });
     </script>
 </body>

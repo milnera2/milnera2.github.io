@@ -6,7 +6,7 @@
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-    <title>Maltio - Simulator</title>
+    <title>Maltio - Scenario 1</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
@@ -79,23 +79,52 @@
                 </div>
             </header>
 
-            <main class="flex-1 flex flex-col items-center py-16 px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10 max-w-2xl mx-auto">
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Stock Option Simulator</h1>
-                    <p class="text-lg text-white/70">Practice trading options in a risk-free environment. Test your strategies and master the market without spending a dime.</p>
-                </div>
-
-                <div class="max-w-4xl w-full mx-auto space-y-8">
-                    <div class="bg-[#1a221d] rounded-xl overflow-hidden p-6">
-                        <div class="aspect-w-16 aspect-h-9 w-full rounded-xl overflow-hidden">
-                            <img src="media/fillersimimage.png" alt="Maltio Stock Simulator Demo" class="w-full h-full object-cover"/>
-                        </div>
+            <main class="flex-1 py-16 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto space-y-12">
+                    <div class="text-center mb-10">
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Round 1: Scenario</h1>
+                        <p class="text-lg text-white/70">Analyze the situation and make your first move. This round is based on real historical data.</p>
                     </div>
-                    
-                    <div class="flex justify-center">
-                        <button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-[var(--primary-color)] text-[#111714] text-lg font-bold tracking-wide shadow-lg shadow-[var(--primary-color)]/20 hover:bg-emerald-400 transition-all duration-300 transform hover:scale-105">
-                            <span>Start Simulating</span>
-                        </button>
+
+                    <div class="bg-[#1a221d] rounded-xl p-6 space-y-8">
+                        <div class="space-y-4">
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)]">The Story:</h2>
+                            <p class="text-white/80">
+                                It's early 2010. The economy is showing signs of recovery, but with caution still in the air. Tech stocks, which have seen some recent volatility, are now on the minds of many investors. The company "TechCorp" has an innovative new product in the pipeline, but the market is unsure if it will be a hit. Today's price for TechCorp is **$25.00**. You must decide whether to reserve an option for this stock.
+                            </p>
+                        </div>
+                        
+                        <div class="w-full h-px bg-[#293830]"></div>
+
+                        <div class="w-full rounded-xl overflow-hidden bg-[#293830] p-4">
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Market Chart:</h2>
+                            <img src="media/chart.png" alt="Historical stock chart for TechCorp" class="w-full h-auto object-cover rounded-md"/>
+                        </div>
+                        
+                        <div class="w-full h-px bg-[#293830]"></div>
+
+                        <div class="space-y-4">
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)]">Make Your Decision:</h2>
+                            <div class="flex flex-col sm:flex-row items-center justify-between bg-[#293830] rounded-lg p-4 space-y-4 sm:space-y-0 sm:space-x-4">
+                                <p class="text-white/80 text-sm font-bold">
+                                    Current Price: <span class="text-[var(--primary-color)]">$25.00</span>
+                                </p>
+                                <p class="text-white/80 text-sm font-bold">
+                                    Option Reserve Cost: <span class="text-[var(--secondary-color)]">$10.00</span>
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                                <button class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-[var(--primary-color)] text-[#111714] text-base font-bold tracking-wide shadow-lg hover:bg-emerald-400 transition-colors duration-300">
+                                    <span>Reserve Option</span>
+                                </button>
+                                <button class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-transparent border-2 border-white/60 text-white/60 text-base font-bold tracking-wide hover:bg-white/10 transition-colors duration-300">
+                                    <span>Pass</span>
+                                </button>
+                                <button class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-transparent border-2 border-white/60 text-white/60 text-base font-bold tracking-wide hover:bg-white/10 transition-colors duration-300">
+                                    <span>Buy</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>

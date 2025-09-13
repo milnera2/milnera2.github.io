@@ -6,7 +6,7 @@
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-    <title>Maltio - Simulator</title>
+    <title>Maltio - Simulator Tutorial</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
@@ -79,23 +79,49 @@
                 </div>
             </header>
 
-            <main class="flex-1 flex flex-col items-center py-16 px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10 max-w-2xl mx-auto">
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Stock Option Simulator</h1>
-                    <p class="text-lg text-white/70">Practice trading options in a risk-free environment. Test your strategies and master the market without spending a dime.</p>
-                </div>
-
-                <div class="max-w-4xl w-full mx-auto space-y-8">
-                    <div class="bg-[#1a221d] rounded-xl overflow-hidden p-6">
-                        <div class="aspect-w-16 aspect-h-9 w-full rounded-xl overflow-hidden">
-                            <img src="media/fillersimimage.png" alt="Maltio Stock Simulator Demo" class="w-full h-full object-cover"/>
-                        </div>
+            <main class="flex-1 py-16 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto space-y-12">
+                    <div class="text-center mb-10">
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Simulator Tutorial</h1>
+                        <p class="text-lg text-white/70">Master stock options trading in a risk-free environment. Learn the rules and strategies before you begin.</p>
                     </div>
-                    
-                    <div class="flex justify-center">
-                        <button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-[var(--primary-color)] text-[#111714] text-lg font-bold tracking-wide shadow-lg shadow-[var(--primary-color)]/20 hover:bg-emerald-400 transition-all duration-300 transform hover:scale-105">
-                            <span>Start Simulating</span>
-                        </button>
+
+                    <div class="bg-[#1a221d] rounded-xl p-6 space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">How to Play</h2>
+                            <p class="text-white/80 mb-4">
+                                The goal of the simulation is to make as much money as possible. You will start with a virtual balance of **$100**.
+                            </p>
+                            <ol class="list-decimal list-inside text-white/80 space-y-4 ml-4">
+                                <li>
+                                    **Round 1:** You will be presented with a real historical stock price and a corresponding stock option. Your first decision is whether to **reserve the option**. The cost of reserving the option will be deducted from your total balance.
+                                </li>
+                                <li>
+                                    **Rounds 2 & 3:** The stock price will change, and you will have the opportunity to either **buy** or **sell** the stock based on its new market value. You can only act on the option you chose to reserve in the first round.
+                                </li>
+                                <li>
+                                    **Outcome:** At the end of the 3 rounds, your final balance will be calculated based on your trading decisions. The goal is to see how much you can grow your initial $100.
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <div class="w-full h-px bg-[#293830] my-8"></div>
+
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Rules of the Game</h2>
+                            <ul class="list-disc list-inside text-white/80 space-y-4 ml-4">
+                                <li>You start with a fixed **$100** virtual balance.</li>
+                                <li>The simulation consists of **3 rounds** based on real historical stock data.</li>
+                                <li>You can only choose to reserve one option per simulation.</li>
+                                <li>The simulation is for **educational purposes only** and does not constitute financial advice.</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex justify-center mt-10">
+                            <button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-[var(--primary-color)] text-[#111714] text-lg font-bold tracking-wide shadow-lg shadow-[var(--primary-color)]/20 hover:bg-emerald-400 transition-all duration-300 transform hover:scale-105">
+                                <span>Start Simulating</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </main>
