@@ -6,7 +6,7 @@
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-    <title>Maltio - Scenario 1</title>
+    <title>Maltio - Scenario 2</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
@@ -98,7 +98,7 @@
 
                         <div class="w-full rounded-xl overflow-hidden bg-[#293830] p-4">
                             <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">Market Chart:</h2>
-                            <img src="media/chart.png" alt="Historical stock chart for TechCorp" class="w-full h-auto object-cover rounded-md"/>
+                            <img src="financestock.png" alt="Historical stock chart for TechCorp" class="w-full h-auto object-cover rounded-md"/>
                         </div>
                         
                         <div class="w-full h-px bg-[#293830]"></div>
@@ -107,20 +107,20 @@
                             <h2 class="text-2xl font-bold text-[var(--primary-color)]">Make Your Decision:</h2>
                             <div class="flex flex-col sm:flex-row items-center justify-between bg-[#293830] rounded-lg p-4 space-y-4 sm:space-y-0 sm:space-x-4">
                                 <p class="text-white/80 text-sm font-bold">
-                                    Current Price: <span class="text-[var(--primary-color)]">$25.00</span>
+                                    Current Price: <span class="text-[var(--primary-color)]">$34.17</span>
                                 </p>
                                 <p class="text-white/80 text-sm font-bold">
-                                    Option Reserve Cost: <span class="text-[var(--secondary-color)]">$10.00</span>
+                                    Option Reserve Cost: <span class="text-[var(--secondary-color)]">$5.00</span>
                                 </p>
                             </div>
                             <div class="flex flex-wrap justify-center gap-4 pt-4">
-                                <button class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-[var(--primary-color)] text-[#111714] text-base font-bold tracking-wide shadow-lg hover:bg-emerald-400 transition-colors duration-300">
+                                <button id="reserve" class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-[var(--primary-color)] text-[#111714] text-base font-bold tracking-wide shadow-lg hover:bg-emerald-400 transition-colors duration-300">
                                     <span>Reserve Option</span>
                                 </button>
-                                <button class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-transparent border-2 border-white/60 text-white/60 text-base font-bold tracking-wide hover:bg-white/10 transition-colors duration-300">
+                                <button id="pass" class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-transparent border-2 border-white/60 text-white/60 text-base font-bold tracking-wide hover:bg-white/10 transition-colors duration-300">
                                     <span>Pass</span>
                                 </button>
-                                <button class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-transparent border-2 border-white/60 text-white/60 text-base font-bold tracking-wide hover:bg-white/10 transition-colors duration-300">
+                                <button id="buy" class="flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-transparent border-2 border-white/60 text-white/60 text-base font-bold tracking-wide hover:bg-white/10 transition-colors duration-300">
                                     <span>Buy</span>
                                 </button>
                             </div>
@@ -143,6 +143,20 @@
     </div>
 
     <script>
+        var reserve = document.getElementById("reserve");
+        var pass = document.getElementById("pass");
+        var buy = document.getElementById("buy")
+        reserve.addEventListener("click", () => {
+            sessionStorage.setItem('money', sessionStorage.getItem('money')-5);
+            window.location.href = "./scenario3.html";
+        })
+        pass.addEventListener("click", () => {
+            window.location.href = "./scenario3.html";
+        })
+        buy.addEventListener("click", () => {
+            sessionStorage.setItem('money', sessionStorage.getItem('money')-17.13);
+            window.location.href = "./scenario3.html";
+        })
         document.addEventListener('DOMContentLoaded', () => {
             const hamburgerButton = document.getElementById('hamburger-button');
             const mobileMenu = document.getElementById('mobile-menu');

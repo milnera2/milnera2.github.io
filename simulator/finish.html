@@ -89,8 +89,8 @@
                     <div class="bg-[#1a221d] rounded-xl p-6 space-y-8">
                         <div class="text-center">
                             <h2 class="text-3xl font-bold text-white mb-4">Your Result:</h2>
-                            <p class="text-5xl font-extrabold text-[var(--primary-color)]">
-                                +$25.00
+                            <p id="finalval" class="text-5xl font-extrabold text-[var(--primary-color)]">
+                                
                             </p>
                             <p class="text-white/60 text-lg mt-2">from an initial $100.00 balance</p>
                         </div>
@@ -144,6 +144,9 @@
     </div>
 
     <script>
+        window.onload = function(){
+            document.getElementById('finalval').innerHTML = "$"+sessionStorage.getItem("money");
+        };
         document.addEventListener('DOMContentLoaded', () => {
             const hamburgerButton = document.getElementById('hamburger-button');
             const mobileMenu = document.getElementById('mobile-menu');
