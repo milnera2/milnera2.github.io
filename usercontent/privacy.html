@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Malio - Privacy Policy</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #36e28c;
+            --secondary-color: #00bfff;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        @layer components {
+            .mobile-menu {
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
+            }
+
+            .mobile-menu.is-open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#111714] text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="relative sticky top-0 z-50 flex items-center justify-between border-b border-solid border-b-[#293830] bg-[#111714]/80 px-4 sm:px-6 lg:px-10 py-4 backdrop-blur-md">
+                <div class="flex items-center gap-3 text-white">
+                    <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"/>
+                    </svg>
+                    <h2 class="text-white text-2xl font-bold tracking-tight">Malio</h2>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Home</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Learning</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">News</a>
+                        <a class="text-white/80 hover:text-white transition-colors text-base font-medium" href="#">Simulator</a>
+                    </nav>
+                    
+                    <button id="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden flex items-center justify-center text-white hover:text-[var(--secondary-color)] transition-colors">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <span class="sr-only">Open menu</span>
+                    </button>
+
+                    <button type="button" class="flex items-center justify-center rounded-full size-12 bg-[#293830] hover:bg-[var(--secondary-color)] text-white transition-colors">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+
+                <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-x-0 top-[64px] bg-[#1a221d] border-b border-solid border-b-[#293830] py-4 z-40">
+                    <nav class="flex flex-col items-center gap-4">
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Home</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Learning</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">News</a>
+                        <a class="mobile-link text-white/80 hover:text-white transition-colors text-lg font-medium py-2" href="#">Simulator</a>
+                    </nav>
+                </div>
+            </header>
+
+            <main class="flex-1 py-16 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white text-center mb-8">Privacy Policy</h1>
+                    <p class="text-sm text-white/60 text-center mb-12">Last updated: September 12, 2025</p>
+
+                    <div class="bg-[#1a221d] rounded-xl p-8 space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">1. Information We Collect</h2>
+                            <p class="text-white/80">
+                                We collect information that you provide directly to us, such as when you create an account, or contact us. This may include your name, email address, and any other information you choose to provide. We may also automatically collect certain information when you visit our website, such as your IP address, browser type, and usage data, through cookies and other tracking technologies.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">2. How We Use Your Information</h2>
+                            <p class="text-white/80">
+                                We use the information we collect to provide, maintain, and improve our services, including to:
+                                <ul class="list-disc list-inside mt-4 space-y-2">
+                                    <li>Create and manage your account.</li>
+                                    <li>Provide educational content and access to the simulator.</li>
+                                    <li>Monitor and analyze usage and trends to improve your experience.</li>
+                                    <li>Detect, investigate, and prevent illegal activities.</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">3. Sharing of Information</h2>
+                            <p class="text-white/80">
+                                We do not sell or rent your personal information to third parties. We may share information with service providers who perform services on our behalf, such as web hosting, data analysis, and email delivery. These service providers are authorized to use your information only as necessary to provide these services to us. We may also disclose your information if required by law or in the good faith belief that such action is necessary to comply with a legal obligation, protect our rights or property, or ensure the safety of our users.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">4. Your Choices</h2>
+                            <p class="text-white/80">
+                                You can disable cookies through your browser settings, though some parts of the Service may not function properly as a result.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">5. Security</h2>
+                            <p class="text-white/80">
+                                We take reasonable measures to protect your personal information from loss, theft, misuse, unauthorized access, disclosure, alteration, and destruction. However, no data transmission over the internet can be guaranteed to be 100% secure.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-4">6. Contact Us</h2>
+                            <p class="text-white/80">
+                                If you have any questions about this Privacy Policy, please contact us at milnera2@nku.edu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="border-t border-solid border-t-[#293830]">
+                <div class="max-w-7xl mx-auto px-5 py-10 text-center">
+                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
+                        <a class="text-white/60 hover:text-white transition-colors" href="ToS.html">Terms of Service</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Privacy Policy</a>
+                        <a class="text-white/60 hover:text-white transition-colors" href="#">Contact Us</a>
+                    </div>
+                    <p class="text-white/40 text-sm">© 2025 Aaron Milner. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (!hamburgerButton || !mobileMenu) return;
+
+            const setAria = (open) => {
+                hamburgerButton.setAttribute('aria-expanded', String(open));
+            };
+
+            hamburgerButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = mobileMenu.classList.contains('is-open');
+                mobileMenu.classList.toggle('is-open');
+                setAria(!isOpen);
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('is-open')) {
+                        mobileMenu.classList.remove('is-open');
+                        setAria(false);
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!mobileMenu.contains(target) && !hamburgerButton.contains(target)) {
+                    mobileMenu.classList.remove('is-open');
+                    setAria(false);
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+                    mobileMenu.classList.remove('is-open');
+                    setAria(false);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
