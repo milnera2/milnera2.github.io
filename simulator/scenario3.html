@@ -147,14 +147,14 @@
         var pass = document.getElementById("pass");
         var buy = document.getElementById("buy")
         reserve.addEventListener("click", () => {
-            sessionStorage.setItem('money', sessionStorage.getItem('money')+23.91);
+            sessionStorage.setItem('money', Nubmer(sessionStorage.getItem('money'))+23.91);
             window.location.href = "./finish.html";
         })
         pass.addEventListener("click", () => {
             window.location.href = "./finish.html";
         })
         buy.addEventListener("click", () => {
-            sessionStorage.setItem('money', sessionStorage.getItem('money')+43.91);
+            sessionStorage.setItem('money', Number(sessionStorage.getItem('money'))+43.91);
             window.location.href = "./finish.html";
         })
         document.addEventListener('DOMContentLoaded', () => {
