@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolios on ASE230 Projects Portfolio</title>
+    <link>https://milnera2.github.io/portfolio/</link>
+    <description>Recent content in Portfolios on ASE230 Projects Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://milnera2.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://milnera2.github.io/portfolio/project-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://milnera2.github.io/portfolio/project-list/</guid>
+      <description>title: &amp;ldquo;Project List&amp;rdquo; date: 2025-12-03T23:01:00-05:00 draft: false&#xA;Selected Projects&#xA;This document outlines several completed and ongoing technical and creative projects.&#xA;Modified &amp;ldquo;Turing Test&amp;rdquo; with an English Focus&#xA;The goal of this project is to both inform about and assess Generative AI&amp;rsquo;s ability to participate in creative writing and compare its output to that created by humans. The assessment is conducted via a modified &amp;ldquo;Turing Test&amp;rdquo; to see if readers are able to differentiate between human and AI writers.</description>
+    </item>
+  </channel>
+</rss>
